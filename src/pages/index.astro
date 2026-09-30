@@ -1,11 +1,173 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+const title = "Shannon Hubbell - Web guy in Oakland, CA";
+const description =
+	"Hand-crafted, free range, organic web sites, just like Mom used to make.";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={title} description={description}>
+	<header class="layout">
+		<h1>
+			Hi, my name's <em>Shannon</em> and I would like to be your web guy.
+		</h1>
+	</header>
+	<main class="layout">
+		<div class="intro">
+			<p>
+				Consulting, design, development, hosting. <strong>No AI.</strong
+				> Hand-crafted, free range, organic web sites, just like Mom used
+				to make.
+			</p>
+		</div>
+		<section id="who">
+			<div class="you">
+				<h2>Who are you?</h2>
+				<a href="/v2/business">
+					<article class="business">
+						<h3>A local business? &#10148; <span>Find out more!</span></h3>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipiscing
+							elit minus est. Officia sunt nulla aliqua voluptas
+							minim soluta culpa in soluta.
+						</p>
+					</article>
+				</a>
+				<a href="/v2/event">
+					<article class="event">
+						<h3>A live event? &#10148; <span>Find out more!</span></h3>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipiscing
+							elit minus est. Officia sunt nulla aliqua voluptas
+							minim soluta culpa in soluta.
+						</p>
+					</article>
+				</a>
+				<a href="/v2/cause">
+					<article class="cause">
+						<h3>A good cause? &#10148; <span>Find out more!</span></h3>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipiscing
+							elit minus est. Officia sunt nulla aliqua voluptas
+							minim soluta culpa in soluta.
+						</p>
+					</article>
+				</a>
+			</div>
+			<div class="me">
+				<h2>Who am I?</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In pariatur dolore dolor dolore et esse cumque. Repellendus cumque dolor ut laboris est. Dolor non voluptas soluta est do laborum iusto laboris velit iusto eiusmod. Cillum cillum anim qui distinctio rerum sed.</p>
+			</div>
+		</section>
+	</main>
 </Layout>
+
+<style>
+	header {
+		padding: 30px 0;
+	}
+	h1 {
+		font-weight: normal;
+		font-size: 4rem;
+		color: var(--text-color-heavy);
+		line-height: 120%;
+		margin: 0;
+		padding: 0;
+		max-width: 950px;
+		em {
+			font-style: normal;
+			color: var(--highlight-color);
+		}
+	}
+	main {
+		padding-bottom: 4rem;
+		.intro {
+			max-width: 1000px;
+		}
+		p {
+			font-size: 2rem;
+			line-height: 140%;
+			font-weight: 300;
+			margin: 0 0 2rem 0;
+			strong {
+				color: var(--highlight-color);
+			}
+			a {
+				text-decoration: none;
+				border-bottom: 0.2rem dotted var(--highlight-color);
+			}
+		}
+	}
+	#who {
+		display: flex;
+		justify-content: space-between;
+		div {
+			max-width: 48%;
+		}
+		h2 {
+			font-size: 3rem;
+			font-weight: normal;
+		}
+		.you {
+			a {
+				text-decoration: none;
+				cursor: pointer;
+				color: var(--text-color);
+				display: block;
+				margin: 1rem 0;
+				&:hover {
+					h3 span {
+						opacity: 1;
+					}
+					.business {
+						background-size: 110%;
+					}
+				}
+			}
+			article {
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-position: left top;
+				transition: all 0.5s ease-out;
+				h3 {
+					color: var(--text-color-heavy);
+					background: var(--bg-color);
+					padding: 1rem;
+					font-size: 2rem;
+					font-weight: normal;
+					margin: 0;
+					border: 1px solid var(--text-color);
+					span {
+						color: var(--highlight-color);
+						opacity: 0;
+						transition: all 0.5s;
+					}
+				}
+				p {
+					padding: 0;
+					margin: 0;
+					padding: 0.8rem;
+					color: var(--text-color);
+					font-size: 1.5rem;
+				}
+			}
+			.business {
+			}
+		}
+		.me {
+			width: calc(48% - 4rem);
+			padding: 0 2rem;
+			background: var(--text-color);
+			color: var(--bg-color);
+			opacity: .7;
+		}
+		@media (max-width: 1000px) {
+			display: block;
+			div {
+				max-width: 100%;
+				article h3 span {
+					opacity: 1 !important;
+				}
+			}
+		}
+	}
+</style>
