@@ -1,87 +1,99 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Business from "../components/Business.astro";
+
 const title = "Shannon Hubbell - Web guy in Oakland, CA";
 const description =
-	"Hand-crafted, free range, organic web sites, just like Mom used to make.";
+	"Consulting, design, development, hosting. No AI. Just hand-crafted, free range, organic web sites.";
 ---
 
 <Layout title={title} description={description}>
 	<header class="layout">
-		<h1 data-aos="fade-right" data-aos-delay="600">
+		<h1>
 			Hi, my name's <em>Shannon</em> and I would like to be your web guy.
 		</h1>
 	</header>
-	<main class="layout">
-		<div class="intro" data-aos="fade-right" data-aos-delay="800">
-			<p>
-				Consulting, design, development, hosting. <strong>No AI.</strong
-				> Just hand-crafted, free range, organic web sites.
-			</p>
+	<main>
+		<div class="layout">
+			<div class="intro" data-aos="fade-right" data-aos-delay="800">
+				<p>
+					Consulting, design, development, hosting. <strong
+						>No AI.</strong
+					> Just hand-crafted, free range, organic web sites.
+				</p>
+			</div>
+			<section id="who" data-aos="fade-in" data-aos-delay="1100">
+				<div class="you">
+					<h2>Who are you?</h2>
+					<a href="/#business" data-aos="zoom-out-right">
+						<article class="business">
+							<h3>
+								A local business? &#10148; <span
+									>Find out more!</span
+								>
+							</h3>
+							<p>
+								Restaurant? Used book store? Cat cafe? No matter
+								what you're selling, your customers need to know
+								what you got and how to get it. Let me help.<br
+								/>
+								<span class="read">Read on...</span>
+							</p>
+						</article>
+					</a>
+					<a href="/#event">
+						<article class="event">
+							<h3>
+								A live event? &#10148; <span>Roll out!</span>
+							</h3>
+							<p>
+								Too many events and conferences are hampered by
+								poorly structured, difficult to read sites.
+								Especially for mobile! Let's get your attendees
+								oriented, so they can have a good time.<br />
+								<span class="read">Read on...</span>
+							</p>
+						</article>
+					</a>
+					<a href="/#cause">
+						<article class="cause">
+							<h3>
+								A good cause? &#10148; <span
+									>Get out the word!</span
+								>
+							</h3>
+							<p>
+								Thank you for tackling a good cause. But it's
+								hard to do good if nobody knows! Your
+								non-profit, charity, or political group needs a
+								soapbox. Let me handle that, so you can do the
+								rest.<br />
+								<span class="read">Read on...</span>
+							</p>
+						</article>
+					</a>
+				</div>
+				<div class="me">
+					<h2>Who am I?</h2>
+					<p>
+						I'm <strong>Shannon Hubbell</strong>, and I have <a
+							href="./resume">spent over 20 years</a
+						> building marketing websites for clients such as <strong
+							>Adobe</strong
+						>, <strong>Google</strong>, <strong>Autodesk</strong>, <strong
+							>Microsoft</strong
+						>, and <strong>Salesforce</strong>.
+					</p>
+					<p>
+						From strategy to deployment, I can help with you with
+						every step in building your web presence in a
+						responsible and accessible way.
+					</p>
+					<p><a href="/contact">Let's talk!</a></p>
+				</div>
+			</section>
 		</div>
-		<section id="who" data-aos="fade-in" data-aos-delay="1100">
-			<div class="you">
-				<h2>Who are you?</h2>
-				<a href="/business" data-aos="zoom-out-right">
-					<article class="business">
-						<h3>
-							A local business? &#10148; <span
-								>Find out more!</span
-							>
-						</h3>
-						<p>
-							Restaurant? Used book store? Cat cafe? No matter
-							what you're selling, your customers need to know
-							what you got and how to get it. Let me help.<br />
-							<span class="read">Read on...</span>
-						</p>
-					</article>
-				</a>
-				<a href="/event">
-					<article class="event">
-						<h3>A live event? &#10148; <span>Roll out!</span></h3>
-						<p>
-							Too many events and conferences are hampered by
-							poorly structured, difficult to read sites.
-							Especially for mobile! Let's get your attendees
-							oriented, so they can have a good time.<br />
-							<span class="read">Read on...</span>
-						</p>
-					</article>
-				</a>
-				<a href="/cause">
-					<article class="cause">
-						<h3>
-							A good cause? &#10148; <span>Get out the word!</span
-							>
-						</h3>
-						<p>
-							You're a do-gooder. Good on you. But it's hard to do
-							good if nobody knows! Your non-profit, charity, or
-							political group needs a soapbox. Let me handle that,
-							so you can do the rest.
-						</p>
-					</article>
-				</a>
-			</div>
-			<div class="me">
-				<h2>Who am I?</h2>
-				<p>
-					I'm <strong>Shannon Hubbell</strong>, and I have <a
-						href="./resume">spent over 20 years</a
-					> building marketing websites for clients such as <strong
-						>Adobe</strong
-					>, <strong>Google</strong>, <strong>Autodesk</strong>, <strong
-						>Microsoft</strong
-					>, and <strong>Salesforce</strong>.
-				</p>
-				<p>
-					From strategy to deployment, I can help with you with every
-					step in building your web presence in a responsible and
-					accessible way.
-				</p>
-				<p><a href="/contact">Let's talk!</a></p>
-			</div>
-		</section>
+		<Business />
 	</main>
 </Layout>
 
