@@ -21,41 +21,65 @@ const description =
 		<section id="who" data-aos="fade-in" data-aos-delay="1100">
 			<div class="you">
 				<h2>Who are you?</h2>
-				<a href="/business">
+				<a href="/business" data-aos="zoom-out-right">
 					<article class="business">
-						<h3>A local business? &#10148; <span>Find out more!</span></h3>
+						<h3>
+							A local business? &#10148; <span
+								>Find out more!</span
+							>
+						</h3>
 						<p>
-							Lorem ipsum dolor sit amet consectetur adipiscing
-							elit minus est. Officia sunt nulla aliqua voluptas
-							minim soluta culpa in soluta.
+							Restaurant? Used book store? Cat cafe? No matter
+							what you're selling, your customers need to know
+							what you got and how to get it. Let me help.<br />
+							<span class="read">Read on...</span>
 						</p>
 					</article>
 				</a>
 				<a href="/event">
 					<article class="event">
-						<h3>A live event? &#10148; <span>Find out more!</span></h3>
+						<h3>A live event? &#10148; <span>Roll out!</span></h3>
 						<p>
-							Lorem ipsum dolor sit amet consectetur adipiscing
-							elit minus est. Officia sunt nulla aliqua voluptas
-							minim soluta culpa in soluta.
+							Too many events and conferences are hampered by
+							poorly structured, difficult to read sites.
+							Especially for mobile! Let's get your attendees
+							oriented, so they can have a good time.<br />
+							<span class="read">Read on...</span>
 						</p>
 					</article>
 				</a>
 				<a href="/cause">
 					<article class="cause">
-						<h3>A good cause? &#10148; <span>Find out more!</span></h3>
+						<h3>
+							A good cause? &#10148; <span>Get out the word!</span
+							>
+						</h3>
 						<p>
-							Lorem ipsum dolor sit amet consectetur adipiscing
-							elit minus est. Officia sunt nulla aliqua voluptas
-							minim soluta culpa in soluta.
+							You're a do-gooder. Good on you. But it's hard to do
+							good if nobody knows! Your non-profit, charity, or
+							political group needs a soapbox. Let me handle that,
+							so you can do the rest.
 						</p>
 					</article>
 				</a>
 			</div>
 			<div class="me">
 				<h2>Who am I?</h2>
-				<p>I'm <strong>Shannon Hubbell</strong>, and I have <a href="./resume">spent over 20 years</a> building marketing websites for clients such as <strong>Adobe</strong>, <strong>Google</strong>, <strong>Autodesk</strong>, <strong>Microsoft</strong>, and <strong>Salesforce</strong>.</p>
-				<p>From strategy to deployment, I can help with you with every step in crafting your web presence.</p>
+				<p>
+					I'm <strong>Shannon Hubbell</strong>, and I have <a
+						href="./resume">spent over 20 years</a
+					> building marketing websites for clients such as <strong
+						>Adobe</strong
+					>, <strong>Google</strong>, <strong>Autodesk</strong>, <strong
+						>Microsoft</strong
+					>, and <strong>Salesforce</strong>.
+				</p>
+				<p>
+					From strategy to deployment, I can help with you with every
+					step in building your web presence in a responsible and
+					accessible way.
+				</p>
+				<p><a href="/contact">Let's talk!</a></p>
 			</div>
 		</section>
 	</main>
@@ -119,7 +143,7 @@ const description =
 				margin: 1rem 0;
 				&:hover {
 					h3 {
-						transition: all .5s ease-in-out;
+						transition: all 0.5s ease-in-out;
 						transform: scale(1.05);
 						span {
 							opacity: 1;
@@ -153,6 +177,9 @@ const description =
 					padding: 0.8rem;
 					color: var(--text-color);
 					font-size: 1.5rem;
+					.read {
+						color: var(--highlight-color);
+					}
 				}
 			}
 			.business {
