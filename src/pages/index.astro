@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Business from "../components/Business.astro";
+import LiveEvent from "../components/LiveEvent.astro";
+import ContactBar from "../components/ContactBar.astro";
 
 const title = "Shannon Hubbell - Web guy in Oakland, CA";
 const description =
@@ -93,7 +95,15 @@ const description =
 				</div>
 			</section>
 		</div>
+
 		<Business />
+
+		<ContactBar />
+
+		<LiveEvent />
+
+		<ContactBar />
+
 	</main>
 </Layout>
 
@@ -185,6 +195,7 @@ const description =
 				}
 				p {
 					padding: 0;
+					display: none;
 					margin: 0;
 					padding: 0.8rem;
 					color: var(--text-color);
