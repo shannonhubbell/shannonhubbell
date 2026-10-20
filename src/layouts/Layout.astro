@@ -1,6 +1,9 @@
 ---
 import "../styles/general.css";
 import "aos/dist/aos.css";
+
+import CtaWidget from  "../components/CtaWidget.astro"
+
 const { title, description } = Astro.props;
 const tabTitle = title ? title : "Shannon Hubbell";
 ---
@@ -22,6 +25,7 @@ const tabTitle = title ? title : "Shannon Hubbell";
 		<title>{tabTitle}</title>
 	</head>
 	<body>
+		<CtaWidget />
 		<slot />
 		<script>
 			import AOS from "aos";

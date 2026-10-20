@@ -4,10 +4,14 @@ import PageHeader from "../components/PageHeader.astro";
 import Footer from "../components/Footer.astro";
 
 import Headshot from "../assets/headshot.webp";
+import LinkedIn from "../assets/linkedin.svg";
+
+import * as resume from "../content/resume-text.md";
+const { Content } = resume;
 
 const title = "Shannon Hubbell's Resumé";
 const description =
-	"Consulting, design, development, hosting. No AI. Just hand-crafted, free range, organic web sites.";
+	"Consulting, design, development, hosting. H and-crafted, free range, organic web sites. No AI.";
 ---
 
 <Layout title={title} description={description}>
@@ -15,239 +19,24 @@ const description =
 	<main>
 		<div class="layout">
 			<div id="resume">
-				<h2>Resumé</h2>
-				<p>
-					<strong>Shannon Ellery Hubbell</strong><br />
-					Oakland, CA 94607<br />
-					<a href="mailto:shannon.hubbell@gmail.com"
-						>shannon.hubbell@gmail.com</a
-					>
-				</p>
-				<hr />
-				<h2>Professional summary</h2>
-				<p>
-					Creative web developer, writer, and project manager with
-					experience building websites, applications, responsive
-					emails, animated assets, and virtual event experiences for
-					clients including Autodesk, Adobe, Cisco, Salesforce, and
-					Google. Skilled in quality assurance, content management
-					systems, social media, motion graphics, and collaborating
-					with designers and clients to deliver engaging digital
-					experiences.
-				</p>
-				<hr />
-				<h2 id="work-experience">Work experience</h2>
-				<h3 id="web-developer">Web Developer</h3>
-				<h4 id="freelance--oakland-ca">Freelance | Oakland, CA</h4>
-				<h4 id="january-2018-to-present">January 2018 to Present</h4>
-				<ul>
-					<li>
-						Develop websites for clients such as Autodesk, Adobe,
-						and Cisco, delivering customized digital experiences
-						aligned with client requirements
-					</li>
-					<li>
-						Create animated videos for web assets, adding motion
-						graphics that strengthen digital marketing and audience
-						engagement
-					</li>
-					<li>
-						Develop responsive HTML emails for HubSpot and other
-						CRMs, supporting consistent communication across devices
-						and marketing platforms
-					</li>
-					<li>
-						Build web applications and experiences for live virtual
-						events, enabling interactive digital engagement for
-						remote audiences
-					</li>
-				</ul>
-				<h3 id="volunteer-web-and-social-media-project-manager">
-					Volunteer Web and Social Media Project Manager
-				</h3>
-				<h4 id="museum-of-art-and-digital-entertainment">
-					Museum of Art and Digital Entertainment
-				</h4>
-				<h4 id="january-2019-to-present">January 2019 to Present</h4>
-				<ul>
-					<li>
-						Supervise the website for a museum, archive, and
-						educational nonprofit, maintaining accurate and
-						accessible online content
-					</li>
-					<li>
-						Write social media posts that promote museum
-						programming, educational initiatives, and organizational
-						updates to online audiences
-					</li>
-				</ul>
-				<h3 id="senior-web-developer">Senior Web Developer</h3>
-				<h4 id="viewstream">Viewstream</h4>
-				<h4 id="january-2008-to-january-2018">
-					January 2008 to January 2018
-				</h4>
-				<ul>
-					<li>
-						Developed websites and applications for companies such
-						as Autodesk, Adobe, Salesforce, and Google, delivering
-						tailored digital experiences for enterprise clients
-					</li>
-					<li>
-						Managed quality assurance on responsive web projects
-						across desktop and mobile devices, improving consistency
-						and functionality before launch
-					</li>
-					<li>
-						Built interactive touchscreen applications using web
-						technologies for internal and external events, creating
-						engaging event experiences
-					</li>
-					<li>
-						Created email templates and managed localized email
-						campaigns using Salesforce, supporting coordinated
-						communications across regional audiences
-					</li>
-					<li>
-						Created animated HTML banners and managed retargeted ad
-						campaigns, strengthening digital advertising initiatives
-						through motion-based creative
-					</li>
-					<li>
-						Collaborated with designers and clients to refine
-						requirements, aligning project deliverables with
-						creative goals and stakeholder expectations
-					</li>
-					<li>
-						Trained clients in using content management systems such
-						as WordPress, improving their ability to maintain and
-						update website content
-					</li>
-				</ul>
-				<h3 id="video-editor-animator-web-developer">
-					Video Editor, Animator, Web Developer
-				</h3>
-				<h4 id="viewstream-1">Viewstream</h4>
-				<h4 id="january-2007-to-january-2008">
-					January 2007 to January 2008
-				</h4>
-				<ul>
-					<li>
-						Edited marketing videos and created motion graphics,
-						strengthening visual storytelling and supporting
-						promotional communications
-					</li>
-					<li>
-						Updated websites with current news and press releases,
-						keeping online content accurate, timely, and relevant to
-						visitors
-					</li>
-				</ul>
-				<h3 id="shift-manager">Shift Manager</h3>
-				<h4 id="cerrito-speakeasy-movie-theater">
-					Cerrito Speakeasy Movie Theater
-				</h4>
-				<h4 id="january-2007-to-january-2008-1">
-					January 2007 to January 2008
-				</h4>
-				<ul>
-					<li>
-						Managed shift workers across the box office, server, and
-						kitchen teams, coordinating daily operations and
-						maintaining service continuity
-					</li>
-					<li>
-						Counted tills at shift close, supporting accurate cash
-						reconciliation and financial controls
-					</li>
-					<li>Introduced special screenings and events</li>
-					<li>
-						Shut down the 35mm projector after the last screening of
-						the night, completing end-of-day theater operations
-						safely and reliably
-					</li>
-				</ul>
-				<h3 id="production-manager">Production Manager</h3>
-				<h4 id="see-change">See Change</h4>
-				<h4 id="january-2006-to-january-2007">
-					January 2006 to January 2007
-				</h4>
-				<ul>
-					<li>
-						Edited documentaries and created motion graphics for
-						nonprofit evaluations, clarifying program outcomes
-						through compelling visual storytelling
-					</li>
-					<li>
-						Filmed video interviews, capturing source material for
-						evaluative documentaries and organizational
-						communications
-					</li>
-					<li>
-						Coordinated with the company team to determine b-roll
-						locations and shot b-roll footage, supporting complete
-						and context-rich documentary production
-					</li>
-					<li>
-						Created interactive menus for DVDs, improving navigation
-						and accessibility for viewers accessing documentary
-						content
-					</li>
-				</ul>
-				<hr />
-				<h2 id="education">Education</h2>
-				<h3 id="drama-and-communications-film">
-					Drama and Communications (Film)
-				</h3>
-				<h4 id="university-of-new-orleans">
-					University of New Orleans
-				</h4>
-				<h4 id="2000-to-2005">2000 to 2005</h4>
-				<h3 id="creative-writing">Creative Writing</h3>
-				<h4 id="new-orleans-center-for-creative-arts">
-					New Orleans Center for Creative Arts
-				</h4>
-				<h4 id="1997-to-1999">1997 to 1999</h4>
-				<hr />
-				<h2 id="skills">Skills</h2>
-				<ul>
-					<li>HTML/CSS/Javascript</li>
-					<li>Vue.js</li>
-					<li>Astro</li>
-					<li>Contentful</li>
-					<li>WordPress</li>
-					<li>PHP/MySQL</li>
-					<li>Web Accessibility</li>
-					<li>Git/Github</li>
-					<li>Responsive Email Development</li>
-					<li>HubSpot</li>
-					<li>Salesforce Marketing Cloud</li>
-					<li>Google Analytics</li>
-					<li>
-						Adobe Creative Suite (Photoshop, Premiere, After
-						Effects)
-					</li>
-					<li>Figma</li>
-					<li>Twine</li>
-				</ul>
+				<Content />
 			</div>
 			<div id="contact-extra">
-				<ul>
+				<img src={Headshot.src} alt="Shannon Hubbell's ugly mug" class="headshot" />
+
+				<ul class="links">
 					<li>
-						<img
-							src={Headshot.src}
-							alt="Shannon Hubbell's ugly mug"
-						/>
-				
-						<ul class="links">
-							<li>
-								☎ <a href="tel:+14158582683">+1(415)858-2683</a>
-							</li>
-							<li>
-								📧 <a href="mailto:shannon.hubbell@gmail.com"
-									>shannon.hubbell@gmail.com</a
-								>
-							</li>
-						</ul>
+						<a href="tel:+14158582683">+1 (415) 858-2683</a>
+					</li>
+					<li>
+						<a href="mailto:shannon.hubbell@gmail.com"
+							>shannon.hubbell@gmail.com</a
+						>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/in/shannonhubbell" target="_blank">
+							<img src={LinkedIn.src} alt="LinkedIn Logo" class="social">
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -262,15 +51,20 @@ const description =
 		.layout {
 			display: flex;
 			justify-content: space-between;
+			flex-wrap: wrap;
 		}
 	}
 	#resume {
-		width: calc(60% - 4rem);
+		width: calc(70% - 4rem);
 		padding: 0 2rem;
+		margin-bottom: 2rem;
 		background: var(--text-color);
 		color: var(--bg-color);
 		border-radius: 8px;
-		padding: 2rem;
+		padding: 2rem 2rem 4rem 2rem;
+		@media screen and (max-width: 1100px) {
+			width: auto;
+		}
 		h2 {
 			font-size: 2rem;
 			font-weight: normal;
@@ -285,7 +79,8 @@ const description =
 			margin: 0;
 			font-weight: normal;
 		}
-		p, ul {
+		p,
+		ul {
 			font-size: 1.2rem;
 			line-height: 140%;
 		}
@@ -294,30 +89,35 @@ const description =
 		}
 	}
 	#contact-extra {
-		width: calc(40% - 2rem);
-		> ul {
+		width: calc(30% - 3rem);
+		@media screen and (max-width: 1100px) {
+			width: 100%;
+			text-align: center;
+			img.headshot {
+				display: none;
+			}
+		}
+		img.headshot {
+			max-width: 100%;
+			border-top-left-radius: 50%;
+			border-bottom-right-radius: 50%;
+			border: 1px solid var(--text-color);
+		}
+		ul.links {
 			list-style: none;
-			margin: 0;
+			margin: 1rem 0 0 0;
 			padding: 0;
-			gap: 2rem;
-			ul.links {
-				list-style: none;
-				margin: 1rem 0 0 0;
-				padding: 0;
-				font-size: 1.25rem;
-				a {
-					text-decoration: none;
-				}
-				li {
-					margin: 0;
-					padding: 0;
-				}
+			font-size: 1.25rem;
+			a {
+				text-decoration: none;
 			}
-			img {
-				max-width: 100%;
-				border-radius: 8px;
-				border: 1px solid var(--text-color);
+			li {
+				margin: 0;
+				padding: .5rem 0;
 			}
+		}
+		img.social {
+			width:50px;
 		}
 	}
 </style>
