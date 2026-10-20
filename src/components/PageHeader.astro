@@ -3,20 +3,27 @@
 
 ---
 <header class="layout">
-    <h1><a href="/">Shannon Hubbell</a> / Web guy in Oakland, California</h1>
+    <a href="/">Shannon Hubbell</a> <span>/</span> Modern websites, remarkably human.
 </header>
 
 <style>
 
     header {
-        padding: 2rem 0;
-    }
-    h1 {
-        font-weight: normal;
+        padding: 4rem 0;
+        font-size: 1.5rem;
+        text-transform: lowercase;
         a {
+            font-size: 4rem;
+            font-weight: bold;
             text-decoration: none;
-            &:hover {
-                text-decoration: underline;
+            text-transform: none;
+        }
+        @media screen and (max-width: 1100px) {
+            a {
+                display: block;
+            }
+            span {
+                display: none;
             }
         }
     }
