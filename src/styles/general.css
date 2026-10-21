@@ -11,7 +11,7 @@ html,
 body {
     font-family: "Lexend", sans-serif;
     background-color: var(--bg-color);
-    		background: radial-gradient(circle,rgba(51, 51, 51, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: radial-gradient(circle, rgba(51, 51, 51, 1) 0%, rgba(0, 0, 0, 1) 100%);
 
     color: var(--text-color);
     font-size: 16px;
