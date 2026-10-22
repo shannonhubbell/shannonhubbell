@@ -1,0 +1,127 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Footer from "../../../components/Footer.astro";
+import PortfolioBar from "../../../components/PortfolioBar.astro";
+
+const title = "Shannon Hubbell's Portfolio - Giant Salesforce iPad";
+const description =
+	"Consulting, design, development, hosting. H and-crafted, free range, organic web sites. No AI.";
+
+const portfolioTitle = "Dreamforce iPad";
+const portfolioDescription =
+	"I was given two days to reproduce Salesforce's app's UI as a standalone interactive asset on a 'giant iPad.'";
+---
+
+<Layout title={title} description={description}>
+	<PortfolioBar title={portfolioTitle} description={portfolioDescription} />
+	<main>
+		<div class="layout">
+			<h1>Salesforce: Dreamforce iPad</h1>
+
+			<p>
+				Salesforce wanted to demo their new iPad app on a large touch
+				screen at their Dreamforce conference. Unfortunately, the app
+				was so "new" that it wasn't ready for prime time.
+			</p>
+
+			<p>
+				I was given two days to reproduce their app's UI as a standalone
+				interactive asset on a "giant iPad." Intense project, but very
+				satisfying in the end!
+			</p>
+
+			<div class="yt-embed" data-astro-cid-nizrgmoa>
+				<iframe
+					class="yt-player"
+					src="https://www.youtube.com/embed/nQ4S8MWPLHs"
+					data-astro-cid-nizrgmoa></iframe>
+			</div>
+
+		</div>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	main {
+		padding-bottom: 2rem;
+		.layout {
+			max-width: 800px;
+			h1 {
+				font-size: 3rem;
+				font-weight: normal;
+				color: #FFF;
+				margin: 2rem 0;
+			}
+			p {
+				font-size: 1.2rem;
+				line-height: 140%;
+				padding: 0 0;
+				margin: 2rem 0;
+				max-width: 600px;
+			}
+		}
+	}
+	#portfolio-items {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		@media screen and (max-width: 1100px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@media screen and (max-width: 700px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media screen and (max-width: 400px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		li {
+			margin: 0;
+			padding: 0;
+			border: 1px solid var(--bg-color);
+			a {
+				display: block;
+				background-repeat: no-repeat;
+				background-size: cover;
+				aspect-ratio: 1;
+				position: relative;
+				&::after {
+					content: attr(data-tooltip);
+					position: absolute;
+					top: 1rem;
+					left: 1rem;
+					padding: 0.5rem;
+					width: calc(100% - 3rem);
+					background: rgba(0, 0, 0, 0.75);
+					backdrop-filter: blur(5);
+					opacity: 0;
+					transition: all 1s;
+					color: var(--text-color);
+					@media screen and (max-width: 400px) {
+						opacity: 1;
+					}
+				}
+				&:hover {
+					&::after {
+						opacity: 1;
+					}
+				}
+				article {
+					position: absolute;
+					bottom: 1rem;
+					left: 1rem;
+					padding: 0.5rem;
+					width: calc(100% - 3rem);
+					background: rgba(0, 0, 0, 0.75);
+					backdrop-filter: blur(5);
+				}
+				h2 {
+					margin: 0;
+					font-weight: normal;
+				}
+			}
+		}
+	}
+</style>
