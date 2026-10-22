@@ -20,11 +20,10 @@ const description =
 		<div class="layout">
 			<div class="intro" data-aos="fade-right" data-aos-delay="300">
 				<p>
-					Consulting, design, development, hosting. <strong>No AI.</strong><br>
-					<a href="/portfolio">Here's some of my work.</a> Let me build a website for you.
+					Consulting, design, development, hosting. <strong>No AI.</strong> <a href="/portfolio">Here's some of my work.</a> Let me build a website for you.
 				</p>
 			</div>
-			<section id="who" data-aos="fade-in" data-aos-delay="1100">
+			<section id="who" data-aos="fade-in" data-aos-delay="200">
 				<div class="you">
 					<h2>Who are you?</h2>
 					<a href="/#business" data-aos="zoom-out-right">
@@ -147,6 +146,10 @@ const description =
 			a {
 				text-decoration: none;
 				border-bottom: 0.2rem dotted var(--highlight-color);
+				display: inline-block;
+				@media (max-width: 1000px) {
+					display: inline;
+				}
 			}
 		}
 	}
