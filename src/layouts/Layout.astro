@@ -13,14 +13,17 @@ const tabTitle = title ? title : "Shannon Hubbell";
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-
 		<meta name="og:title" content={title} />
 		<meta name="og:description" content={description} />
-
 		<meta name="description" content={description} />
+		<meta name="og:image" content="/banner.png" />
+		<link rel="canonical" href={Astro.url} />
+		<meta name="og:url" content={Astro.url} />
+		<meta name="og:site_name" content="Shannon Ellery Hubbell" />
+		<meta name="author" content="Shannon Ellery Hubbll" />
+		<meta name="twitter:card" content="summary_large_image" />
 
 		<title>{tabTitle}</title>
 	</head>
