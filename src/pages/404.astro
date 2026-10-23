@@ -1,0 +1,165 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import Footer from "../components/Footer.astro";
+
+import Headshot from "../assets/headshot.webp";
+import LinkedIn from "../assets/linkedin.svg";
+
+import * as resume from "../content/resume-text.md";
+const { Content } = resume;
+
+const title = "Shannon Hubbell's Resumé";
+const description =
+	"Consulting, design, development, hosting. H and-crafted, free range, organic web sites. No AI.";
+---
+
+<Layout title={title} description={description}>
+	<PageHeader />
+	<main>
+		<div class="layout">
+			<div id="copy">
+				<h1>
+					418 Error: I'm a teapot <a
+						href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/418"
+						target="_blank">*</a
+					>
+				</h1>
+				<p>
+					Whoops! Looks like you're looking for something that doesn't
+					exist. It happens. If you're looking for my home page, it's <a
+						href="/">right here.</a
+					>
+				</p>
+				<p>
+					You can also check out a <a href="/portfolio"
+						>selection of my work</a
+					> or <a href="/resume">my resumé</a> or even just jump straight
+					to <a href="/contact">sending me a message.</a> &#129750;
+				</p>
+			</div>
+			<div id="contact-extra">
+				<img
+					src={Headshot.src}
+					alt="Shannon Hubbell's ugly mug"
+					class="headshot"
+				/>
+
+				<ul class="links">
+					<li>
+						<a href="tel:+14158582683">+1 (415) 858-2683</a>
+					</li>
+					<li>
+						<a href="mailto:shannon.hubbell@gmail.com"
+							>shannon.hubbell@gmail.com</a
+						>
+					</li>
+					<li>
+						<a
+							href="https://www.linkedin.com/in/shannonhubbell"
+							target="_blank"
+						>
+							<img
+								src={LinkedIn.src}
+								alt="LinkedIn Logo"
+								class="social"
+							/>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	main {
+		padding-bottom: 2rem;
+		.layout {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+	}
+	#copy {
+		width: calc(70% - 4rem);
+		padding: 0 2rem;
+		margin-bottom: 2rem;
+		background: var(--text-color);
+		color: var(--bg-color);
+		border-radius: 8px;
+		padding: 2rem 2rem 4rem 2rem;
+		@media screen and (max-width: 1100px) {
+			width: auto;
+		}
+		h1 {
+			font-size: 2.5rem;
+			a {
+				text-decoration: none;
+			}
+		}
+		h2 {
+			font-size: 2rem;
+			font-weight: normal;
+		}
+		h3 {
+			font-size: 1.5rem;
+			color: #000;
+			margin: 1rem 0 0;
+		}
+		h4 {
+			font-size: 1.25rem;
+			margin: 0;
+			font-weight: normal;
+		}
+		p,
+		ul {
+			font-size: 1.2rem;
+			line-height: 140%;
+		}
+		a {
+			color: var(--highlight-dark-color);
+			font-weight: bold;
+		}
+		pre {
+			color: var(--highlight-dark-color);
+			max-width: 100%;
+			width: 100%;
+
+
+		}
+	}
+	#contact-extra {
+		width: calc(30% - 3rem);
+		@media screen and (max-width: 1100px) {
+			width: 100%;
+			text-align: center;
+			img.headshot {
+				display: none;
+			}
+		}
+		img.headshot {
+			max-width: 100%;
+			border-top-left-radius: 50%;
+			border-bottom-right-radius: 50%;
+			border: 1px solid var(--text-color);
+		}
+		ul.links {
+			list-style: none;
+			margin: 1rem 0 0 0;
+			padding: 0;
+			font-size: 1.25rem;
+			a {
+				text-decoration: none;
+			}
+			li {
+				margin: 0;
+				padding: 0.5rem 0;
+			}
+		}
+		img.social {
+			width: 50px;
+		}
+	}
+</style>

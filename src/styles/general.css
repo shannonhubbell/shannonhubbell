@@ -4,7 +4,8 @@
     --bg-color: #222;
     --text-color: #CCC;
     --highlight-color: rgba(255, 128, 128, 1);
-    --text-color-heavy: rgb(255, 255, 255, 1);
+    --highlight-dark-color: rgba(109, 0, 0, 1);
+    --text-color-heavy: rgba(255, 255, 255, 1);
 }
 
 html,
