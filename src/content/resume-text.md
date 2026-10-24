@@ -10,7 +10,7 @@ classes: [page, resume]
 
 **Shannon Ellery Hubbell**<br>
 Oakland, CA 94607<br>
-brundlefly@gmail.com
+shannon.hubbell@gmail.com
 
 [PDF Download](/docs/shannon-hubbell-resume-2026-10.pdf)
 
@@ -32,14 +32,6 @@ Creative web developer, writer, and project manager with experience building web
 * Create animated videos for web assets, adding motion graphics that strengthen digital marketing and audience engagement
 * Develop responsive HTML emails for HubSpot and other CRMs, supporting consistent communication across devices and marketing platforms
 * Build web applications and experiences for live virtual events, enabling interactive digital engagement for remote audiences
-
-### Volunteer Web and Social Media Project Manager
-#### Museum of Art and Digital Entertainment
-#### January 2019 to Present
-
-* Supervise the website for a museum, archive, and educational nonprofit, maintaining accurate and accessible online content
-* Write social media posts that promote museum programming, educational initiatives, and organizational updates to online audiences
-
 
 ### Senior Web Developer
 #### Viewstream
@@ -81,7 +73,18 @@ service continuity
 
 ----
 
+## Passion Projects
+
+### Volunteer Web and Social Media Project Manager
+#### Museum of Art and Digital Entertainment
+#### January 2019 to Present
+
+* Supervise the website for a museum, archive, and educational nonprofit, maintaining accurate and accessible online content
+* Write social media posts that promote museum programming, educational initiatives, and organizational updates to online audiences
+
 ## Education
+
+----
 
 ### Drama and Communications (Film)
 #### University of New Orleans
