@@ -2,7 +2,7 @@
 import "../styles/general.css";
 import "aos/dist/aos.css";
 
-import CtaWidget from  "../components/CtaWidget.astro"
+import CtaWidget from "../components/CtaWidget.astro";
 
 const { title, description } = Astro.props;
 const tabTitle = title ? title : "Shannon Hubbell";
@@ -11,6 +11,24 @@ const tabTitle = title ? title : "Shannon Hubbell";
 <!doctype html>
 <html lang="en">
 	<head>
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w: Window & { [key: string]: any }, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({
+					"gtm.start": new Date().getTime(),
+					event: "gtm.js",
+				});
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s) as HTMLScriptElement,
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				const parent = f.parentNode;
+				if (parent) parent.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-K5JFK64W");
+		</script>
+		<!-- End Google Tag Manager -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/favicon.ico" />
@@ -28,6 +46,15 @@ const tabTitle = title ? title : "Shannon Hubbell";
 		<title>{tabTitle}</title>
 	</head>
 	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-K5JFK64W"
+				height="0"
+				width="0"
+				style="display:none;visibility:hidden"></iframe></noscript
+		>
+		<!-- End Google Tag Manager (noscript) -->
 		<CtaWidget />
 		<slot />
 		<script>

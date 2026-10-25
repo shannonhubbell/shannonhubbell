@@ -12,7 +12,7 @@ classes: [page, resume]
 Oakland, CA 94607<br>
 shannon.hubbell@gmail.com
 
-[PDF Download](/docs/shannon-hubbell-resume-2026-10.pdf)
+[PDF Download](/shannon-hubbell-resume-2026-10.pdf)
 
 ----
 
