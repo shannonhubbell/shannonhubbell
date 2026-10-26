@@ -1,0 +1,21 @@
+---
+// src/components/BackToTop.astro
+---
+
+<a href="#top" class="back-to-top" aria-label="Back to top">
+    <span aria-hidden="true">↑</span> Back to Top
+</a>
+<style>
+    .back-to-top {
+        position: fixed;
+        font-weight: bold;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        background-color: var(--highlight-color);
+        color: var(--bg-color);
+        text-decoration: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+</style>
