@@ -2,9 +2,42 @@
 // src/components/BackToTop.astro
 ---
 
-<a href="#top" class="back-to-top" aria-label="Back to top">
+<a href="#top" id="back-to-top" class="back-to-top hidden" aria-label="Back to top">
     <span aria-hidden="true">↑</span> Back to Top
 </a>
+
+<script>
+  function setupBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+
+    const threshold = 300;
+
+    const onScroll = () => {
+      if (window.scrollY > threshold) {
+        btn.classList.remove('hidden');
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+        btn.classList.add('hidden');
+      }
+    };
+
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    btn.addEventListener('click', scrollToTop);
+  }
+
+  // Run on initial load
+  setupBackToTop();
+
+  // Re-run safely if using Astro View Transitions
+  document.addEventListener('astro:after-swap', setupBackToTop);
+</script>
+
 <style>
     .back-to-top {
         position: fixed;
@@ -17,5 +50,11 @@
         text-decoration: none;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        &.visible {
+            opacity: 1;
+        }
+        &.hidden {
+            opacity: 0;
+        }
     }
 </style>
