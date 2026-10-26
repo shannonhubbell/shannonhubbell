@@ -1,5 +1,6 @@
 ---
 // src/pages/portfolio/presidio/coffee-in-the-cloud/aramark/index.astro
+import { ClientRouter } from "astro:transitions";
 import PortfolioBar from "../../../../../components/PortfolioBar.astro";
 import BackToTop from "../../../../../components/BackToTop.astro";
 
@@ -53,6 +54,7 @@ const portfolioDescription =
       rel="stylesheet"
       href="/portfolio-assets/presidio/coffee-in-the-cloud/css/app.css"
     />
+    <ClientRouter />
   </head>
 
   <body class="account-page">

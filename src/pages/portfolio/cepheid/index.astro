@@ -1,5 +1,6 @@
 ---
 // src/pages/portfolio/cepheid/index.astro
+import { ClientRouter } from "astro:transitions";
 import PortfolioBar from "../../../components/PortfolioBar.astro";
 import BackToTop from "../../../components/BackToTop.astro";
 
@@ -54,6 +55,7 @@ const portfolioDescription =
       type="text/css"
       href="/portfolio-assets/cepheid/js/slick/slick.css"
     />
+    <ClientRouter />
   </head>
   <body>
     <PortfolioBar title={portfolioTitle} description={portfolioDescription} />

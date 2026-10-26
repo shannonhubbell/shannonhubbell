@@ -1,5 +1,6 @@
 ---
 // src/pages/portfolio/2goodcompany/index.astro
+import { ClientRouter } from "astro:transitions";
 import PortfolioBar from "../../../components/PortfolioBar.astro";
 import BackToTop from "../../../components/BackToTop.astro";
 
@@ -28,6 +29,7 @@ const portfolioDescription =
 			type="text/css"
 			href="/portfolio-assets/2goodcompany/css/main.css"
 		/>
+		<ClientRouter />
 	</head>
 	<body>
 		<PortfolioBar

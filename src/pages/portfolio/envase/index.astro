@@ -1,5 +1,6 @@
 ---
 // src/pages/portfolio/envase/index.astro
+import { ClientRouter } from "astro:transitions";
 import PortfolioBar from "../../../components/PortfolioBar.astro";
 import BackToTop from "../../../components/BackToTop.astro";
 
@@ -14,6 +15,7 @@ const portfolioDescription = "Marketing microsite for a cloud-based, comprehensi
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>The Next Gen App for Digital Drayage</title>
 		<link rel="stylesheet" href="/portfolio-assets/envase/css/app.css" />
+		<ClientRouter />
 	</head>
 
 	<body>
