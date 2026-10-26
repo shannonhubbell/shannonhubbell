@@ -1,4 +1,5 @@
 ---
+# src/content/resume-text.md
 layout: '../layouts/Layout.astro'
 title: 'Shannon Ellery Hubbell - Coder and writer in Oakland, CA.'
 description: I build things for the internet, I write, and I am more enthusiastic about paleontology than an adult should be.
