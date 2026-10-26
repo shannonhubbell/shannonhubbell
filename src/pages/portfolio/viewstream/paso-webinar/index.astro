@@ -1,5 +1,9 @@
 ---
+// src/pages/portfolio/viewstream/paso-webinar/index.astro
+import { ClientRouter } from "astro:transitions";
 import PortfolioBar from "../../../../components/PortfolioBar.astro";
+import BackToTop from "../../../../components/BackToTop.astro";
+
 const portfolioTitle = "Viewstream PASO Webinar";
 const portfolioDescription =
   "Landing page for digital marketing framework webinar.";
@@ -26,6 +30,7 @@ const portfolioDescription =
       rel="stylesheet"
       href="/portfolio-assets/viewstream/paso-webinar/css/app.css"
     />
+    <ClientRouter />
   </head>
   <body class="temp-landing">
     <PortfolioBar title={portfolioTitle} description={portfolioDescription} />
@@ -193,7 +198,7 @@ const portfolioDescription =
     </footer>
 
     <footer id="byline"></footer>
-
+    <BackToTop />
     <!-- /#byline -->
     <script is:inline src="/portfolio-assets/viewstream/paso-webinar/js/main.js"
     ></script>

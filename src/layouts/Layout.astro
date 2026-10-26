@@ -1,8 +1,11 @@
 ---
+// src/layouts/Layout.astro
 import "../styles/general.css";
 import "aos/dist/aos.css";
+import { ClientRouter } from "astro:transitions";
 
 import CtaWidget from "../components/CtaWidget.astro";
+import BackToTop from "../components/BackToTop.astro";
 
 const { title, description } = Astro.props;
 const tabTitle = title ? title : "Shannon Hubbell";
@@ -44,6 +47,7 @@ const tabTitle = title ? title : "Shannon Hubbell";
 		<meta name="twitter:card" content="summary_large_image" />
 
 		<title>{tabTitle}</title>
+		<ClientRouter />
 	</head>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
@@ -55,8 +59,10 @@ const tabTitle = title ? title : "Shannon Hubbell";
 				style="display:none;visibility:hidden"></iframe></noscript
 		>
 		<!-- End Google Tag Manager (noscript) -->
+		<div id="scroll-sentinel"></div>
 		<CtaWidget />
 		<slot />
+		<BackToTop />
 		<script>
 			import AOS from "aos";
 			AOS.init();

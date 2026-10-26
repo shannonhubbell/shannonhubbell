@@ -1,0 +1,78 @@
+---
+// src/components/BackToTop.astro
+---
+
+<a
+    href="#top"
+    id="back-to-top"
+    class="back-to-top hidden"
+    aria-label="Back to top"
+    data-astro-history="replace"
+>
+    <span aria-hidden="true">↑</span> Back to Top
+</a>
+
+<script>
+    function setupBackToTop() {
+        const btn = document.getElementById("back-to-top");
+        if (!btn) return;
+
+        const threshold = 300;
+
+        const onScroll = () => {
+            if (window.scrollY > threshold) {
+                btn.classList.remove("hidden");
+                btn.classList.add("visible");
+            } else {
+                btn.classList.remove("visible");
+                btn.classList.add("hidden");
+            }
+        };
+
+        const scrollToTop = () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        btn.addEventListener("click", scrollToTop);
+    }
+
+    // Run on initial load
+    setupBackToTop();
+
+    // Re-run safely if using Astro View Transitions
+    document.addEventListener("astro:after-swap", setupBackToTop);
+</script>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+
+    .back-to-top {
+        position: fixed;
+        font-weight: bold;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        background-color: rgba(255, 128, 128, 1);
+        color: #222;
+        text-decoration: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10000;
+        transition: all 1s;
+        &.visible {
+            opacity: 1;
+        }
+        &.hidden {
+            opacity: 0;
+        }
+    }
+</style>
