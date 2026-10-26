@@ -9,5 +9,5 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://www.shannonhubbell.com",
   trailingSlash: "ignore",
-  integrations: [react()],
-});
+  integrations: [react()]
+});                
