@@ -51,7 +51,7 @@ const portfolioDescription =
 			h1 {
 				font-size: 3rem;
 				font-weight: normal;
-				color: #FFF;
+				color: var(--highlight-color);
 				margin: 2rem 0;
 			}
 			p {
@@ -95,7 +95,7 @@ const portfolioDescription =
 					left: 1rem;
 					padding: 0.5rem;
 					width: calc(100% - 3rem);
-					background: rgba(0, 0, 0, 0.75);
+					background: rgba(255, 248, 240, 0.88);
 					backdrop-filter: blur(5);
 					opacity: 0;
 					transition: all 1s;
@@ -115,12 +115,13 @@ const portfolioDescription =
 					left: 1rem;
 					padding: 0.5rem;
 					width: calc(100% - 3rem);
-					background: rgba(0, 0, 0, 0.75);
+					background: rgba(255, 248, 240, 0.88);
 					backdrop-filter: blur(5);
 				}
 				h2 {
 					margin: 0;
 					font-weight: normal;
+					color: var(--text-color-heavy);
 				}
 			}
 		}

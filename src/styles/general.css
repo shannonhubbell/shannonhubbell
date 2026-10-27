@@ -2,18 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 :root {
-    --bg-color: #222;
-    --text-color: #CCC;
-    --highlight-color: rgba(255, 128, 128, 1);
-    --highlight-dark-color: rgba(109, 0, 0, 1);
-    --text-color-heavy: rgba(255, 255, 255, 1);
+    --bg-color: #FFF8F0;
+    --text-color: #2B2D42;
+    --highlight-color: #D6455D;
+    --highlight-dark-color: #FFD9D2;
+    --text-color-heavy: #14151F;
 }
 
 html,
 body {
     font-family: "Lexend", sans-serif;
     background-color: var(--bg-color);
-    background: radial-gradient(circle, rgba(51, 51, 51, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: radial-gradient(circle, #FFFDF9 0%, #FFEBDD 100%);
 
     color: var(--text-color);
     font-size: 16px;
