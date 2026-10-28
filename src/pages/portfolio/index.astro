@@ -4,12 +4,9 @@ import Layout from "../../layouts/Layout.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import Footer from "../../components/Footer.astro";
 
-import Headshot from "../assets/headshot.webp";
-import LinkedIn from "../assets/linkedin.svg";
-
 const title = "Shannon Hubbell's Portfolio";
 const description =
-	"Web design, development, hosting & consulting. Let's work on a website together.";
+	"Web design, development, hosting & consulting. Modern websites, remarkably human.";
 ---
 
 <Layout title={title} description={description}>
@@ -143,6 +140,7 @@ const description =
 			h1 {
 				font-size: 3rem;
 				font-weight: normal;
+				margin-top: 0;
 			}
 		}
 	}
@@ -178,7 +176,7 @@ const description =
 					left: 1rem;
 					padding: 0.5rem;
 					width: calc(100% - 3rem);
-					background: rgba(0, 0, 0, 0.75);
+					background: rgba(255, 248, 240, 0.88);
 					backdrop-filter: blur(5);
 					opacity: 0;
 					transition: all 1s;
@@ -198,12 +196,13 @@ const description =
 					left: 1rem;
 					padding: 0.5rem;
 					width: calc(100% - 3rem);
-					background: rgba(0, 0, 0, 0.75);
+					background: rgba(255, 248, 240, 0.88);
 					backdrop-filter: blur(5);
 				}
 				h2 {
 					margin: 0;
 					font-weight: normal;
+					color: var(--text-color-heavy);
 				}
 			}
 		}
