@@ -1,0 +1,120 @@
+---
+// src/pages/portfolio/salesforce-ipad/index.astro
+import Layout from "../../../layouts/Layout.astro";
+import Footer from "../../../components/Footer.astro";
+import PortfolioBar from "../../../components/PortfolioBar.astro";
+import CtaButton from "../../../components/CtaButton.astro";
+
+const title = "Shannon Hubbell's Portfolio - Adobe Audience Finder";
+const description =
+	"Web design, development, hosting & consulting. Modern websites, remarkably human.";
+
+const portfolioTitle = "Adobe Audience Finder";
+const portfolioDescription =
+	"A filterable and searchable directory of Adobe data partners, built in Wordpress.";
+---
+
+<Layout title={title} description={description}>
+	<PortfolioBar title={portfolioTitle} description={portfolioDescription} />
+	<main>
+		<div class="layout">
+			<h1>Adobe Audience Finder</h1>
+
+			<ul class="thumbs">
+				<li>
+					<img
+						src="/portfolio-assets/adobe/audience-finder/thumb.webp"
+						alt="Screenshot of Adobe Audience Finder"
+					/>
+				</li>
+				<li>
+					<img
+						src="/portfolio-assets/adobe/audience-finder/thumb.webp"
+						alt="Screenshot of Adobe Audience Finder"
+					/>
+				</li>
+				<li>
+					<img
+						src="/portfolio-assets/adobe/audience-finder/thumb.webp"
+						alt="Screenshot of Adobe Audience Finder"
+					/>
+				</li>
+			</ul>
+			<CtaButton
+				url="https://www.adobe-audience-finder.com/"
+				text="View the Site"
+			/>
+			<p>
+				Audience Marketplace is a private data exchange within Adobe
+				Audience Manager that connects advertisers and content
+				publishers. Adobe clients needed a easily accessible resource for searching and filtering data providers based on region and industry and viewing details of their offerings.
+			</p>
+			<p>
+				<strong>Adobe Audience Finder</strong> was the solution. Due to rapid development times and the need for continual updates, I landed on a WordPress solution. Although WordPress is better known as a content management system, I was able to use it to build a public facing, user friendly database application.
+			</p>
+			<p>
+				That was 10 years ago, and the site is still live and updated!
+			</p>
+			<CtaButton
+				url="https://www.adobe-audience-finder.com/"
+				text="View the Site"
+			/>
+
+			
+		</div>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	main {
+		padding-bottom: 2rem;
+		.layout {
+			max-width: 800px;
+			h1 {
+				font-size: 3rem;
+				font-weight: normal;
+				color: var(--highlight-color);
+				margin: 2rem 0;
+			}
+			p {
+				font-size: 1.2rem;
+				line-height: 140%;
+				padding: 0;
+				margin: 1rem 0;
+				max-width: 600px;
+			}
+			blockquote {
+				background: #ccc;
+				margin: 0;
+				padding: 1rem;
+				max-width: 600px;
+				p {
+					margin: 0;
+					padding: 0;
+					max-width: 100%;
+				}
+			}
+			ul {
+				width: 100%;
+				&.thumbs {
+					list-style: none;
+					margin: 0 0 1rem 0;
+					padding: 0;
+					display: grid;
+					grid-template-columns: repeat(3, 1fr);
+					gap: 0.8rem;
+					li {
+						margin: 0;
+						padding: 0;
+						display: inline-block;
+						img {
+							max-width: 100%;
+							display: inline-block;
+						}
+					}
+				}
+			}
+		}
+	}
+</style>

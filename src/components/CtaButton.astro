@@ -1,0 +1,30 @@
+---
+const { text, url, target } = Astro.props;
+const textSet = text ? text : "Click Here";
+const targetSet = target ? target : "_target";
+const urlSet = url ? url : "https://example.com";
+---
+
+<a href={urlSet} target={targetSet} class="cta">
+    {textSet}
+</a>
+
+<style>
+    a.cta {
+        display: inline-block;
+        font-weight: bold;
+        position: relative;
+        padding: 10px 15px;
+        background-color: var(--highlight-color);
+        color: var(--bg-color);
+        text-decoration: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10000;
+        line-height: 100%;
+        transition: all .3s;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+</style>
