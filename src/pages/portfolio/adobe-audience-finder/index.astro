@@ -29,20 +29,20 @@ const portfolioDescription =
 				</li>
 				<li>
 					<img
-						src="/portfolio-assets/adobe/audience-finder/thumb.webp"
+						src="/portfolio-assets/adobe/audience-finder/thumb-02.webp"
 						alt="Screenshot of Adobe Audience Finder"
 					/>
 				</li>
 				<li>
 					<img
-						src="/portfolio-assets/adobe/audience-finder/thumb.webp"
+						src="/portfolio-assets/adobe/audience-finder/thumb-03.webp"
 						alt="Screenshot of Adobe Audience Finder"
 					/>
 				</li>
 			</ul>
 			<CtaButton
 				url="https://www.adobe-audience-finder.com/"
-				text="View the Site"
+				text="Visit the Site"
 			/>
 			<p>
 				Audience Marketplace is a private data exchange within Adobe
@@ -57,7 +57,7 @@ const portfolioDescription =
 			</p>
 			<CtaButton
 				url="https://www.adobe-audience-finder.com/"
-				text="View the Site"
+				text="Visit the Site"
 			/>
 
 			
@@ -84,20 +84,9 @@ const portfolioDescription =
 				margin: 1rem 0;
 				max-width: 600px;
 			}
-			blockquote {
-				background: #ccc;
-				margin: 0;
-				padding: 1rem;
-				max-width: 600px;
-				p {
-					margin: 0;
-					padding: 0;
-					max-width: 100%;
-				}
-			}
 			ul {
-				width: 100%;
 				&.thumbs {
+					width: 100%;
 					list-style: none;
 					margin: 0 0 1rem 0;
 					padding: 0;
@@ -111,6 +100,16 @@ const portfolioDescription =
 						img {
 							max-width: 100%;
 							display: inline-block;
+							border: 1px solid var(--highlight-color);
+						}
+					}
+					@media screen and (max-width: 500px) {
+						grid-template-columns: repeat(1, 1fr);
+						li {
+							display: none;
+							&:first-child {
+								display: block;
+							}
 						}
 					}
 				}
