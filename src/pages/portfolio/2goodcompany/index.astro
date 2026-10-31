@@ -1,4 +1,5 @@
 ---
+import SequentialScripts from "../../../components/SequentialScripts.astro";
 // src/pages/portfolio/2goodcompany/index.astro
 import { ClientRouter } from "astro:transitions";
 import PortfolioBar from "../../../components/PortfolioBar.astro";
@@ -848,27 +849,15 @@ const portfolioDescription =
 			</div>
 		</footer>
 		<BackToTop />
-		<script
-			type="text/javascript"
-			src="/portfolio-assets/2goodcompany/js/jquery-2.1.4.min.js"
-		></script>
-		<script
-			type="text/javascript"
-			src="/portfolio-assets/2goodcompany/js/jquery.fitvids.js"></script>
-		<script
-			type="text/javascript"
-			src="/portfolio-assets/2goodcompany/js/jquery.vimeo.api.min.js"
-		></script>
-		<script
-			type="text/javascript"
-			src="/portfolio-assets/2goodcompany/js/slippry.min.js"></script>
-		<script
-			type="text/javascript"
-			src="/portfolio-assets/2goodcompany/js/jquery.transit.min.js"
-		></script>
-		<!--<script type="text/javascript" src="/portfolio-assets/2goodcompany/js/jquery.validate.min.js"></script>-->
-		<script
-			type="text/javascript"
-			src="/portfolio-assets/2goodcompany/js/scripts.min.js"></script>
+		<SequentialScripts
+		  scripts={[
+		    "/portfolio-assets/2goodcompany/js/jquery-2.1.4.min.js",
+		    "/portfolio-assets/2goodcompany/js/jquery.fitvids.js",
+		    "/portfolio-assets/2goodcompany/js/jquery.vimeo.api.min.js",
+		    "/portfolio-assets/2goodcompany/js/slippry.min.js",
+		    "/portfolio-assets/2goodcompany/js/jquery.transit.min.js",
+		    "/portfolio-assets/2goodcompany/js/scripts.min.js",
+		  ]}
+		/>
 	</body>
 </html>

@@ -1,4 +1,5 @@
 ---
+import SequentialScripts from "../../../../../components/SequentialScripts.astro";
 // src/pages/portfolio/presidio/coffee-in-the-cloud/aramark/index.astro
 import { ClientRouter } from "astro:transitions";
 import PortfolioBar from "../../../../../components/PortfolioBar.astro";
@@ -637,13 +638,11 @@ const portfolioDescription =
       </p>
     </footer>
     <BackToTop />
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.min.js"
-      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-      crossorigin="anonymous"></script>
-
-    <script
-      is:inline
-      src="/portfolio-assets/presidio/coffee-in-the-cloud/js/main.js"></script>
+    <SequentialScripts
+      scripts={[
+        { src: "https://code.jquery.com/jquery-3.6.3.min.js", integrity: "sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" },
+        "/portfolio-assets/presidio/coffee-in-the-cloud/js/main.js",
+      ]}
+    />
   </body>
 </html>

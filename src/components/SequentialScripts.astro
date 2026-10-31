@@ -1,0 +1,43 @@
+---
+// src/components/SequentialScripts.astro
+//
+// Loads external scripts strictly one after another, then runs optional `onload` code.
+//
+// Why: <ClientRouter /> re-creates every <script> when navigating to a page, and
+// scripts created that way run in *download* order, not document order. A page's
+// main.js can therefore run before jQuery ("$ is not defined"). Inline scripts run
+// immediately and in order, so this one inline script chains the loads itself.
+interface Script {
+  src: string;
+  integrity?: string;
+}
+interface Props {
+  scripts: (string | Script)[];
+  onload?: string;
+}
+const { scripts, onload = "" } = Astro.props;
+const list = scripts.map((s) => (typeof s === "string" ? { src: s } : s));
+---
+
+<script is:inline define:vars={{ list, onload }}>
+  (function () {
+    var i = 0;
+    function next() {
+      if (i >= list.length) {
+        if (onload) new Function(onload)();
+        return;
+      }
+      var item = list[i++];
+      var el = document.createElement("script");
+      el.src = item.src;
+      if (item.integrity) {
+        el.integrity = item.integrity;
+        el.crossOrigin = "anonymous";
+      }
+      // Keep going if one fails, so a CDN hiccup doesn't block the rest.
+      el.onload = el.onerror = next;
+      document.body.appendChild(el);
+    }
+    next();
+  })();
+</script>
