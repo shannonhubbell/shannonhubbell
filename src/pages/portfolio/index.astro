@@ -3,6 +3,7 @@
 import Layout from "../../layouts/Layout.astro";
 import PageHeader from "../../components/PageHeader.astro";
 import Footer from "../../components/Footer.astro";
+import CtaButton from "../../components/CtaButton.astro";
 
 const title = "Shannon Hubbell's Portfolio";
 const description =
@@ -13,8 +14,10 @@ const description =
 	<PageHeader />
 	<main>
 		<div class="layout">
-			<h1>Portfolio</h1>
-
+			<header class="content-header">
+				<h1>Portfolio</h1>
+				<CtaButton target="_self" text="Read My Resumé" url="/resume" />
+			</header>
 			<ul id="portfolio-items">
 				<li>
 					<a
@@ -129,9 +132,20 @@ const description =
 				font-size: 3rem;
 				font-weight: normal;
 				margin-top: 0;
+				margin: 0;
 			}
 		}
 	}
+	header.content-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1.5rem 0;
+		@media screen and (max-width: 500px	) {
+			display: none;
+		}
+	}
+	
 	#portfolio-items {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
