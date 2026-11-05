@@ -14,24 +14,20 @@ const tabTitle = title ? title : "Shannon Hubbell";
 <!doctype html>
 <html lang="en">
 	<head>
-		<!-- Google Tag Manager -->
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-9WRKBPV5XK"
+		></script>
 		<script>
-			(function (w: Window & { [key: string]: any }, d, s, l, i) {
-				w[l] = w[l] || [];
-				w[l].push({
-					"gtm.start": new Date().getTime(),
-					event: "gtm.js",
-				});
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s) as HTMLScriptElement,
-					dl = l != "dataLayer" ? "&l=" + l : "";
-				j.async = true;
-				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-				const parent = f.parentNode;
-				if (parent) parent.insertBefore(j, f);
-			})(window, document, "script", "dataLayer", "GTM-K5JFK64W");
+			window.dataLayer = window.dataLayer || [];
+			function gtag(...args: unknown[]) {
+				window.dataLayer.push(args);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-9WRKBPV5XK");
 		</script>
-		<!-- End Google Tag Manager -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/favicon.ico" />
@@ -50,15 +46,6 @@ const tabTitle = title ? title : "Shannon Hubbell";
 		<ClientRouter />
 	</head>
 	<body data-theme="friendly">
-		<!-- Google Tag Manager (noscript) -->
-		<noscript
-			><iframe
-				src="https://www.googletagmanager.com/ns.html?id=GTM-K5JFK64W"
-				height="0"
-				width="0"
-				style="display:none;visibility:hidden"></iframe></noscript
-		>
-		<!-- End Google Tag Manager (noscript) -->
 		<div id="scroll-sentinel"></div>
 		<CtaWidget />
 		<slot />
