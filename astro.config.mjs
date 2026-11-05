@@ -12,5 +12,7 @@ export default defineConfig({
   site: "https://www.shannonhubbell.com",
   trailingSlash: "ignore",
   integrations: [react()],
-  adapter: cloudflare()
+  adapter: cloudflare({
+    mode: 'directory', 
+  }),
 });
