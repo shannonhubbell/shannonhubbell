@@ -4,6 +4,10 @@ import Layout from "../layouts/Layout.astro";
 import PageHeader from "../components/PageHeader.astro";
 import Footer from "../components/Footer.astro";
 
+import { actions } from "astro:actions";
+// Handle fallback if JavaScript is disabled on the client
+const result = Astro.getActionResult(actions.sendEmail);
+
 import Headshot from "../assets/headshot.webp";
 import LinkedIn from "../assets/linkedin.svg";
 
@@ -17,9 +21,56 @@ const description =
 	<main>
 		<div class="layout">
 			<div id="contact-form">
-				<h2>Let's work together. Drop me a line!</h2>
-				<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSerC-P5a-hXl3n7KGneGs9-nDSID1pqE9vTGxflUhGva6VIqw/viewform?embedded=true" width="640" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+				{
+					result?.data?.success && (
+						<div class="alert success">
+							Your message has been sent successfully!
+						</div>
+					)
+				}
+				{
+					result?.error && (
+						<div class="alert error">
+							Failed to send message: {result.error.message}
+						</div>
+					)
+				}
+
+				<form
+					method="POST"
+					action={actions.sendEmail}
+					class="contact-form"
+				>
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							required
+							minlength="2"
+						/>
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email Address</label>
+						<input type="email" id="email" name="email" required />
+					</div>
+
+					<div class="form-group">
+						<label for="message">Message</label>
+						<textarea
+							id="message"
+							name="message"
+							rows="5"
+							required
+							minlength="10"></textarea>
+					</div>
+
+					<button type="submit">Send Message</button>
+				</form>
 				<!--
+				<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSerC-P5a-hXl3n7KGneGs9-nDSID1pqE9vTGxflUhGva6VIqw/viewform?embedded=true" width="640" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 				<form name="contact" method="POST" data-netlify="true">
 					<input type="hidden" name="form-name" value="contact" />
 					<p>
@@ -121,6 +172,9 @@ const description =
 		iframe {
 			max-width: 100%;
 		}
+		.form-group {
+			margin: .5rem 0;
+		}
 		input,
 		textarea {
 			border: 1px solid var(--bg-color);
@@ -132,16 +186,31 @@ const description =
 			margin-top: 0.25rem;
 		}
 		button {
-			background-color: var(--bg-color);
-			color: var(--text-color);
-			padding: 0.5rem;
-			width: calc(100% - 1rem);
+			background-color: var(--highlight-color);
+			color: var(--bg-color);
+			padding: 0.5rem 1rem;
+			width: auto;
 			font-size: 1rem;
 			line-height: 140%;
 			border-radius: 8px;
 			margin-top: 0.25rem;
 			cursor: pointer;
-			font-size: 1rem;
+			font-size: 1.25rem;
+			font-weight: bold;
+			border: none;
+		}
+		.alert {
+			padding: 1rem;
+			border-radius: 4px;
+			margin-bottom: 1.5rem;
+		}
+		.success {
+			background-color: #e6f4ea;
+			color: #137333;
+		}
+		.error {
+			background-color: #fce8e6;
+			color: #c5221f;
 		}
 	}
 	#contact-extra {
