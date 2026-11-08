@@ -2,9 +2,13 @@
 // src/components/Footer.astro
 const year = new Date().getFullYear();
 ---
+
 <footer id="page-footer">
     <div class="layout">
-        &copy; {year} Shannon Hubbell
+        &copy; {year} Shannon Hubbell<br /><br />
+        <a href="https://brundlefly.shannonhubbell.com/" target="_blank"
+            >personal stuff 😊</a
+        >
     </div>
 </footer>
 
@@ -14,6 +18,12 @@ const year = new Date().getFullYear();
         text-align: center;
         .layout {
             padding: 2rem 0 0 0;
+            a {
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
     }
 </style>
