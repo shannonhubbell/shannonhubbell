@@ -1,0 +1,298 @@
+/* src/styles/home.css — home page */
+
+@keyframes pulse-shadow {
+    0% {
+        box-shadow: 0 0 0 0 var(--highlight-color);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(139, 92, 246, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+    }
+}
+
+.home {
+    padding-bottom: 4rem;
+}
+
+/* Hero grid */
+.home-hero {
+    padding: 30px 0;
+
+    h1 {
+        margin: 0;
+        padding: 5cqi;
+        font-size: 11cqi;
+        font-weight: normal;
+        line-height: 120%;
+        color: var(--text-color-heavy);
+        text-wrap: pretty;
+
+        em {
+            font-style: normal;
+            color: var(--highlight-color);
+        }
+    }
+
+    h2 {
+        margin: 0;
+        padding: 5cqi;
+        font-size: 9cqi;
+        font-weight: 300;
+
+        em {
+            font-style: normal;
+            color: var(--highlight-color);
+        }
+
+        a {
+            text-decoration: none;
+            border-bottom: 0.2rem dotted var(--highlight-color);
+        }
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @media screen and (max-width: 1100px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media screen and (max-width: 700px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: 500px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    li {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        aspect-ratio: 1;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid var(--text-color);
+        border-radius: 10px;
+        container-type: inline-size;
+
+        @media screen and (max-width: 500px) {
+            &.portfolio-item {
+                display: none;
+            }
+        }
+
+        /* Portfolio thumbnail tiles */
+        >a {
+            display: block;
+            position: relative;
+            aspect-ratio: 1;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all 1s;
+
+            article {
+                position: absolute;
+                bottom: 1rem;
+                left: 1rem;
+                width: calc(100% - 3rem);
+                padding: 0.5rem;
+                background: rgba(255, 248, 240, 0.5);
+                border-radius: 10px;
+                opacity: 0;
+                transition: all 1s;
+            }
+
+            h2 {
+                margin: 0;
+                font-weight: normal;
+                color: var(--text-color-heavy);
+            }
+
+            &:hover {
+                filter: contrast(1);
+
+                article {
+                    opacity: 1;
+                }
+            }
+        }
+
+        /* Headshot tile */
+        &.ohhai {
+            transition: all 1s;
+
+            a {
+                filter: none !important;
+            }
+
+            span {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                font-size: 5rem;
+                color: var(--bg-color);
+                -webkit-text-stroke: 1px black;
+                paint-order: stroke fill;
+            }
+
+            img {
+                max-width: 100%;
+                filter: grayscale() brightness(0.75) contrast(0.75);
+                transition: all 1s;
+            }
+
+            &:hover {
+                transform: scale(1.01);
+                animation: pulse-shadow 1.2s infinite;
+
+                img {
+                    filter: grayscale(0) brightness(0.75) contrast(1);
+                }
+            }
+        }
+    }
+}
+
+/* "Who are you? / Who am I?" */
+.who {
+    display: flex;
+    justify-content: space-between;
+
+    >div {
+        max-width: 48%;
+    }
+
+    h2 {
+        font-size: 3rem;
+        font-weight: normal;
+    }
+
+    p {
+        margin: 0 0 2rem;
+        font-size: 2rem;
+        font-weight: 300;
+        line-height: 140%;
+
+        strong {
+            color: var(--highlight-color);
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            border-bottom: 0.2rem dotted var(--highlight-color);
+
+            @media (max-width: 1000px) {
+                display: inline;
+            }
+        }
+    }
+
+    .you {
+        a {
+            display: block;
+            margin: 1rem 0;
+            color: var(--text-color);
+            text-decoration: none;
+            cursor: pointer;
+
+            &:hover h3 {
+                transform: scale(1.05);
+                transition: all 0.5s ease-in-out;
+
+                span {
+                    opacity: 1;
+                }
+            }
+        }
+
+        article {
+            transition: all 0.5s ease-out;
+
+            h3 {
+                margin: 0;
+                padding: 1rem;
+                font-size: 2rem;
+                font-weight: normal;
+                color: var(--text-color-heavy);
+                background: var(--bg-color);
+                border: 1px solid var(--text-color);
+                border-radius: 8px;
+
+                span {
+                    color: var(--highlight-color);
+                    opacity: 0;
+                    transition: all 0.5s;
+                }
+            }
+
+            p {
+                display: none;
+                margin: 0;
+                padding: 0.8rem;
+                font-size: 1.5rem;
+                color: var(--text-color);
+
+                .read {
+                    color: var(--highlight-color);
+                }
+            }
+        }
+    }
+
+    .me {
+        width: calc(48% - 4rem);
+        padding: 0 2rem;
+        background: var(--text-color);
+        color: var(--bg-color);
+        border-radius: 8px;
+
+        p {
+            font-size: 1.75rem;
+        }
+
+        strong,
+        a {
+            color: inherit;
+            font-weight: bold;
+            border-color: inherit;
+        }
+
+        a {
+            color: var(--highlight-dark-color);
+        }
+    }
+
+    @media (max-width: 1000px) {
+        display: block;
+
+        >div {
+            max-width: 100%;
+            padding-bottom: 2rem;
+
+            article h3 span {
+                opacity: 1 !important;
+            }
+
+            &.me {
+                width: auto;
+                padding: 1rem;
+
+                h2 {
+                    margin: 1rem 0;
+                }
+            }
+        }
+    }
+}

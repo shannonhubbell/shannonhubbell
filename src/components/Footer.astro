@@ -3,7 +3,7 @@
 const year = new Date().getFullYear();
 ---
 
-<footer id="page-footer">
+<footer id="page-footer" class="site-footer">
     <div class="layout">
         &copy; {year} Shannon Hubbell<br /><br />
         <a href="https://brundlefly.shannonhubbell.com/" target="_blank"
@@ -11,19 +11,3 @@ const year = new Date().getFullYear();
         >
     </div>
 </footer>
-
-<style>
-    #page-footer {
-        padding: 5rem 0;
-        text-align: center;
-        .layout {
-            padding: 2rem 0 0 0;
-            a {
-                text-decoration: none;
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
-</style>

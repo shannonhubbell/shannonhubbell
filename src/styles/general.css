@@ -1,4 +1,4 @@
-/* src/styles/general.css */
+/* src/styles/general.css — base styles: tokens, reset, typography, layout helpers */
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 :root {
@@ -7,18 +7,22 @@
     --highlight-color: #D6455D;
     --highlight-dark-color: #FFD9D2;
     --text-color-heavy: #14151F;
+    --link-on-tint: #B22E47;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 html,
 body {
-    font-family: "Lexend", sans-serif;
-    background-color: var(--bg-color);
-    background: radial-gradient(circle, #FFFDF9 0%, #FFEBDD 100%);
-
-    color: var(--text-color);
-    font-size: 16px;
+    width: 100%;
+    height: 100%;
     margin: 0;
-    scroll-behavior: smooth;
+    font-family: "Lexend", sans-serif;
+    font-size: 16px;
+    color: var(--text-color);
+    background: radial-gradient(circle, #FFFDF9 0%, #FFEBDD 100%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -27,14 +31,14 @@ body {
     }
 }
 
+a {
+    color: var(--highlight-color);
+}
+
 .layout {
     max-width: 1300px;
     width: calc(100% - 40px);
     margin: 0 auto;
-}
-
-a {
-    color: var(--highlight-color);
 }
 
 .bg-mask {

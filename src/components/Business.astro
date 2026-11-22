@@ -1,7 +1,7 @@
 ---
 // src/components/Business.astro
 ---
-<section id="business">
+<section id="business" class="feature-section feature-section--business">
     <div class="layout">
         <h2>Are you a local business?</h2>
         <p>
@@ -76,56 +76,3 @@
         </ul>
     </div>
 </section>
-
-<style>
-    #business {
-        background: #DDEBD3;
-        color: #2B2D42;
-        margin: 6rem 0 0 0;
-        padding: 3rem 0 5rem;
-        @media screen and (max-width: 500px) {
-            padding: 2rem 0;
-        }
-        h2 {
-            font-size: 3rem;
-            font-weight: normal;
-            color: #14151F;
-        }
-        a {
-            color: #B22E47;
-        }
-        .features {
-            list-style: none;
-            margin: 3rem 0 0 0;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            @media screen and (max-width: 750px) {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            @media screen and (max-width: 500px) {
-                grid-template-columns: repeat(1, 1fr);
-            }
-            li {
-                background: rgba(255, 255, 255, 0.6);
-                padding: 1.5em;
-                border-radius: 8px;
-            }
-            h3 {
-                font-size: 2rem;
-                font-weight: normal;
-                color: #14151F;
-                text-wrap: pretty;
-                padding: 0;
-                margin: 0;
-            }
-            p {
-                font-size: 1.25rem;
-                line-height: 180%;
-                margin: 1rem 0;
-                text-wrap: pretty;
-            }
-        }
-    }
-</style>

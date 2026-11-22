@@ -6,6 +6,9 @@ import LiveEvent from "../components/LiveEvent.astro";
 import GoodCause from "../components/GoodCause.astro";
 import ContactBar from "../components/ContactBar.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/home.css";
+
+import Headshot from "../assets/headshot.webp";
 
 const title = "Shannon Hubbell - Modern websites, remarkably human.";
 const description =
@@ -13,33 +16,101 @@ const description =
 ---
 
 <Layout title={title} description={description}>
-	<header class="layout">
-		<h1>
-			Hi, my name's <em>Shannon</em> and I would like to be your web guy.
-		</h1>
-	</header>
-	<main>
+	<main class="home">
+		<header class="layout home-hero">
+			<ul>
+				<li class="ohhai">
+					<a href="/contact">
+						<img
+							src={Headshot.src}
+							alt="Shannon Hubbell's ugly mug"
+							class="headshot"
+						/>
+						<span>Hi.</span>
+					</a>
+				</li>
+				<li>
+					<h1>
+						My name's <em>Shannon</em> and I would like to be your
+						web guy.
+					</h1>
+				</li>
+				<li class="portfolio-item">
+					<a
+						href="/portfolio/presidio/coffee-in-the-cloud/aramark"
+						style="background-image: url(/portfolio-assets/presidio/coffee-in-the-cloud/thumb.webp);"
+					>
+						<article>
+							<h2>Presidio</h2>
+						</article>
+					</a>
+				</li>
+				<li>
+					<h2>
+						Consulting, design, development, and hosting, all with a
+						human touch. <em>No AI.</em>
+						<br />
+						<br />
+						<a href="/contact">Let me build a website for you.</a>
+					</h2>
+				</li>
+				<li class="portfolio-item">
+					<a
+						href="https://adobe-audience-finder.shannon-hubbell.workers.dev/"
+						style="background-image: url(/portfolio-assets/adobe/audience-finder/thumb.webp);"
+					>
+						<article>
+							<h2>Adobe</h2>
+						</article>
+					</a>
+				</li>
+				<li class="portfolio-item">
+					<a
+						href="https://athena-squad.shannon-hubbell.workers.dev/"
+						style="background-image: url('/portfolio-assets/athena-squad/thumb.webp');"
+					>
+						<article>
+							<h2>Athena Squad</h2>
+						</article>
+					</a>
+				</li>
+				<li class="portfolio-item">
+					<a
+						href="https://spot-vallette.shannon-hubbell.workers.dev/"
+						style="background-image: url('/portfolio-assets/spot-vallette/thumb.webp');"
+					>
+						<article>
+							<h2>Spot Vallette</h2>
+						</article>
+					</a>
+				</li>
+				<li class="portfolio-item">
+					<a
+						href="https://heroncon-2026.shannon-hubbell.workers.dev/"
+						style="background-image: url('/portfolio-assets/heroncon/thumb.webp');"
+					>
+						<article>
+							<h2>HeronCon 2026</h2>
+						</article>
+					</a>
+				</li>
+			</ul>
+		</header>
 		<div class="layout">
-			<div class="intro">
-				<p>
-					Consulting, design, development, hosting. <strong>No AI.</strong> <a href="/portfolio">Here's some of my work.</a> Let me build a website for you.
-				</p>
-			</div>
-			<section id="who">
+			<section id="who" class="who">
 				<div class="you">
 					<h2>Who are you?</h2>
 					<a href="/#business">
 						<article class="business">
 							<h3>
-								A local business? &#10148; <span
-									>Find out more!</span
-								>
+								A local business? &#10148;{" "}
+								<span>Find out more!</span>
 							</h3>
 							<p>
 								Restaurant? Used book store? Cat cafe? No matter
 								what you're selling, your customers need to know
-								what you got and how to get it. Let me help.<br
-								/>
+								what you got and how to get it. Let me help.
+								<br />
 								<span class="read">Read on...</span>
 							</p>
 						</article>
@@ -53,7 +124,8 @@ const description =
 								Too many events and conferences are hampered by
 								poorly structured, difficult to read sites.
 								Especially for mobile! Let's get your attendees
-								oriented, so they can have a good time.<br />
+								oriented, so they can have a good time.
+								<br />
 								<span class="read">Read on...</span>
 							</p>
 						</article>
@@ -61,16 +133,16 @@ const description =
 					<a href="/#cause">
 						<article class="cause">
 							<h3>
-								A good cause? &#10148; <span
-									>Get the word out!</span
-								>
+								A good cause? &#10148;{" "}
+								<span>Get the word out!</span>
 							</h3>
 							<p>
 								Thank you for tackling a good cause. But it's
 								hard to do good if nobody knows! Your
 								non-profit, charity, or political group deserves
 								a soapbox. Let me handle that, so you can do the
-								rest.<br />
+								rest.
+								<br />
 								<span class="read">Read on...</span>
 							</p>
 						</article>
@@ -79,21 +151,24 @@ const description =
 				<div class="me">
 					<h2>Who am I?</h2>
 					<p>
-						I'm <strong>Shannon Hubbell</strong>, and I have <a
-							href="./resume">spent over 20 years</a
-						> building marketing websites for clients such as <strong
-							>Adobe</strong
-						>, <strong>Google</strong>, <strong>Autodesk</strong>, <strong
-							>Microsoft</strong
-						>, and <strong>Salesforce</strong>.
+						I'm <strong>Shannon Hubbell</strong>, and I have{" "}
+						<a href="./resume">spent over 20 years</a> building
+						marketing websites for clients such as{" "}
+						<strong>Adobe</strong>, <strong>Google</strong>,{" "}
+						<strong>Autodesk</strong>, <strong>Microsoft</strong>,
+						and <strong>Salesforce</strong>.
 					</p>
-					<p><a href="/portfolio">Check out some of my work!</a></p>
+					<p>
+						<a href="/portfolio">Check out some of my work!</a>
+					</p>
 					<p>
 						From strategy to deployment, I can help you with every
 						step in building your web presence in a responsible and
 						accessible way.
 					</p>
-					<p><a href="/contact">Let's talk.</a></p>
+					<p>
+						<a href="/contact">Let's talk.</a>
+					</p>
 				</div>
 			</section>
 		</div>
@@ -113,146 +188,3 @@ const description =
 		<Footer />
 	</main>
 </Layout>
-
-<style>
-	header {
-		padding: 30px 0;
-	}
-	h1 {
-		font-weight: normal;
-		font-size: 4rem;
-		color: var(--text-color-heavy);
-		line-height: 120%;
-		margin: 0;
-		padding: 0;
-		max-width: 950px;
-		text-wrap: pretty;
-		em {
-			font-style: normal;
-			color: var(--highlight-color);
-		}
-		@media (max-width: 1000px) {
-			font-size: 3rem;
-			padding-top: 3rem;
-		}
-	}
-	main {
-		padding-bottom: 4rem;
-		.intro {
-			max-width: 850px;
-		}
-		p {
-			font-size: 2rem;
-			line-height: 140%;
-			font-weight: 300;
-			margin: 0 0 2rem 0;
-			strong {
-				color: var(--highlight-color);
-			}
-			a {
-				text-decoration: none;
-				border-bottom: 0.2rem dotted var(--highlight-color);
-				display: inline-block;
-				@media (max-width: 1000px) {
-					display: inline;
-				}
-			}
-		}
-	}
-	#who {
-		display: flex;
-		justify-content: space-between;
-		div {
-			max-width: 48%;
-		}
-		h2 {
-			font-size: 3rem;
-			font-weight: normal;
-		}
-		.you {
-			a {
-				text-decoration: none;
-				cursor: pointer;
-				color: var(--text-color);
-				display: block;
-				margin: 1rem 0;
-				&:hover {
-					h3 {
-						transition: all 0.5s ease-in-out;
-						transform: scale(1.05);
-						span {
-							opacity: 1;
-						}
-					}
-				}
-			}
-			article {
-				background-size: 100%;
-				background-repeat: no-repeat;
-				background-position: left top;
-				transition: all 0.5s ease-out;
-				h3 {
-					color: var(--text-color-heavy);
-					background: var(--bg-color);
-					padding: 1rem;
-					font-size: 2rem;
-					font-weight: normal;
-					margin: 0;
-					border: 1px solid var(--text-color);
-					border-radius: 8px;
-					span {
-						color: var(--highlight-color);
-						opacity: 0;
-						transition: all 0.5s;
-					}
-				}
-				p {
-					padding: 0;
-					display: none;
-					margin: 0;
-					padding: 0.8rem;
-					color: var(--text-color);
-					font-size: 1.5rem;
-					.read {
-						color: var(--highlight-color);
-					}
-				}
-			}
-			.business {
-			}
-		}
-		.me {
-			width: calc(48% - 4rem);
-			padding: 0 2rem;
-			background: var(--text-color);
-			color: var(--bg-color);
-			border-radius: 8px;
-			strong,
-			a {
-				color: inherit;
-				font-weight: bold;
-				border-color: inherit;
-			}
-			a {
-				color: var(--highlight-dark-color);
-			}
-		}
-		@media (max-width: 1000px) {
-			display: block;
-			div {
-				max-width: 100%;
-				padding-bottom: 2rem;
-				article h3 span {
-					opacity: 1 !important;
-				}
-				&.me {
-					width: auto;
-					padding: 1rem;
-					h2 {
-						margin: 1rem 0;
-					}
-				}
-			}
-		}
-	}
-</style>

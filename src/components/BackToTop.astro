@@ -43,36 +43,3 @@
     // Re-run safely if using Astro View Transitions
     document.addEventListener("astro:after-swap", setupBackToTop);
 </script>
-
-<style>
-    html {
-        scroll-behavior: smooth;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        html {
-            scroll-behavior: auto;
-        }
-    }
-
-    .back-to-top {
-        position: fixed;
-        font-weight: bold;
-        bottom: 20px;
-        right: 20px;
-        padding: 10px 15px;
-        background-color: var(--highlight-color);
-        color: var(--bg-color);
-        text-decoration: none;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 10000;
-        transition: all 1s;
-        &.visible {
-            opacity: 1;
-        }
-        &.hidden {
-            opacity: 0;
-        }
-    }
-</style>
