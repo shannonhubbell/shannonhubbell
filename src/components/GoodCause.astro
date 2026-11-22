@@ -2,7 +2,7 @@
 // src/components/GoodCause.astro
 ---
 
-<section id="cause">
+<section id="cause" class="feature-section feature-section--cause">
     <div class="layout">
         <h2>Are you a force for good?</h2>
         <p>
@@ -81,55 +81,3 @@
         </ul>
     </div>
 </section>
-
-<style>
-    #cause {
-        background: #fadcdc;
-        color: #2b2d42;
-        padding: 3rem 0 5rem;
-        @media screen and (max-width: 500px) {
-            padding: 2rem 0;
-        }
-        h2 {
-            font-size: 3rem;
-            font-weight: normal;
-            color: #14151f;
-        }
-        a {
-            color: #b22e47;
-        }
-        .features {
-            list-style: none;
-            margin: 3rem 0 0 0;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            @media screen and (max-width: 750px) {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            @media screen and (max-width: 500px) {
-                grid-template-columns: repeat(1, 1fr);
-            }
-            li {
-                background: rgba(255, 255, 255, 0.6);
-                padding: 1.5em;
-                border-radius: 8px;
-            }
-            h3 {
-                font-size: 2rem;
-                font-weight: normal;
-                color: #14151f;
-                text-wrap: pretty;
-                padding: 0;
-                margin: 0;
-            }
-            p {
-                font-size: 1.25rem;
-                line-height: 180%;
-                margin: 1rem 0;
-                text-wrap: pretty;
-            }
-        }
-    }
-</style>

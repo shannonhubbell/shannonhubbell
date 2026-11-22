@@ -6,6 +6,7 @@ import LiveEvent from "../components/LiveEvent.astro";
 import GoodCause from "../components/GoodCause.astro";
 import ContactBar from "../components/ContactBar.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/home.css";
 
 import Headshot from "../assets/headshot.webp";
 
@@ -15,8 +16,8 @@ const description =
 ---
 
 <Layout title={title} description={description}>
-	<main>
-		<header class="layout">
+	<main class="home">
+		<header class="layout home-hero">
 			<ul>
 				<li class="ohhai">
 					<a href="/contact">
@@ -34,16 +35,7 @@ const description =
 						web guy.
 					</h1>
 				</li>
-				<li class="pitch">
-					<h2>
-						Consulting, design, development, and hosting, all with a
-						human touch. <em>No AI.</em>
-						<br />
-						<br />
-						Let me build a website for you.
-					</h2>
-				</li>
-				<li>
+				<li class="portfolio-item">
 					<a
 						href="/portfolio/presidio/coffee-in-the-cloud/aramark"
 						style="background-image: url(/portfolio-assets/presidio/coffee-in-the-cloud/thumb.webp);"
@@ -54,6 +46,15 @@ const description =
 					</a>
 				</li>
 				<li>
+					<h2>
+						Consulting, design, development, and hosting, all with a
+						human touch. <em>No AI.</em>
+						<br />
+						<br />
+						<a href="/contact">Let me build a website for you.</a>
+					</h2>
+				</li>
+				<li class="portfolio-item">
 					<a
 						href="https://adobe-audience-finder.shannon-hubbell.workers.dev/"
 						style="background-image: url(/portfolio-assets/adobe/audience-finder/thumb.webp);"
@@ -63,7 +64,7 @@ const description =
 						</article>
 					</a>
 				</li>
-				<li>
+				<li class="portfolio-item">
 					<a
 						href="https://athena-squad.shannon-hubbell.workers.dev/"
 						style="background-image: url('/portfolio-assets/athena-squad/thumb.webp');"
@@ -73,7 +74,7 @@ const description =
 						</article>
 					</a>
 				</li>
-				<li>
+				<li class="portfolio-item">
 					<a
 						href="https://spot-vallette.shannon-hubbell.workers.dev/"
 						style="background-image: url('/portfolio-assets/spot-vallette/thumb.webp');"
@@ -83,7 +84,7 @@ const description =
 						</article>
 					</a>
 				</li>
-				<li>
+				<li class="portfolio-item">
 					<a
 						href="https://heroncon-2026.shannon-hubbell.workers.dev/"
 						style="background-image: url('/portfolio-assets/heroncon/thumb.webp');"
@@ -96,7 +97,7 @@ const description =
 			</ul>
 		</header>
 		<div class="layout">
-			<section id="who">
+			<section id="who" class="who">
 				<div class="you">
 					<h2>Who are you?</h2>
 					<a href="/#business">
@@ -187,267 +188,3 @@ const description =
 		<Footer />
 	</main>
 </Layout>
-
-<style>
-	@keyframes pulse-shadow {
-		0% {
-			box-shadow: 0 0 0 0 var(--highlight-color);
-		}
-		70% {
-			box-shadow: 0 0 0 15px rgba(139, 92, 246, 0);
-		}
-		100% {
-			box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
-		}
-	}
-	header {
-		padding: 30px 0;
-
-		h1 {
-			font-weight: normal;
-			font-size: 2.5rem;
-			color: var(--text-color-heavy);
-			line-height: 120%;
-			margin: 0;
-			padding: 1rem;
-			text-wrap: pretty;
-			em {
-				font-style: normal;
-				color: var(--highlight-color);
-			}
-			@media (max-width: 1000px) {
-				font-size: 3rem;
-				padding-top: 3rem;
-			}
-		}
-		h2 {
-			margin: 0;
-			padding: 1rem;
-			font-size: 1.75rem;
-			font-weight: normal;
-			font-weight: 300;
-			em {
-				color: var(--highlight-color);
-				font-style: normal;
-			}
-		}
-		ul {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			gap: 20px;
-			@media screen and (max-width: 1100px) {
-				grid-template-columns: repeat(3, 1fr);
-			}
-			@media screen and (max-width: 700px) {
-				grid-template-columns: repeat(2, 1fr);
-			}
-			@media screen and (max-width: 500px) {
-				grid-template-columns: repeat(1, 1fr);
-			}
-			li {
-				margin: 0;
-				padding: 0;
-				border: 1px solid var(--text-color);
-				border-radius: 10px;
-				overflow: hidden;
-				position: relative;
-				aspect-ratio: 1;
-				&.ohhai {
-					transition: all 1s;
-					a {
-						filter: none !important;
-					}
-					span {
-						position: absolute;
-						right: 1rem;
-						top: 1rem;
-						font-size: 5rem;
-						color: var(--bg-color);
-						-webkit-text-stroke: 1px black;
-						paint-order: stroke fill;
-					}
-					img {
-						max-width: 100%;
-						filter: grayscale() brightness(0.75) contrast(0.75);
-					}
-					&:hover {
-						transform: scale(1.01);
-						animation: pulse-shadow 1.2s infinite;
-					}
-				}
-				&.pitch {
-					background-color: var(--text-color);
-					color: var(--bg-color);
-				}
-				h3 {
-					font-size: 2rem;
-					line-height: 140%;
-					font-weight: 300;
-					margin: 0 0 2rem 0;
-					strong {
-						color: var(--highlight-color);
-					}
-					a {
-						text-decoration: none;
-						border-bottom: 0.2rem dotted var(--highlight-color);
-						display: inline;
-						@media (max-width: 1000px) {
-							display: inline;
-						}
-					}
-				}
-				a {
-					display: block;
-					background-repeat: no-repeat;
-					background-size: cover;
-					aspect-ratio: 1;
-					position: relative;
-					transition: all 1s;
-					filter: contrast(0.5);
-					article {
-						position: absolute;
-						bottom: 1rem;
-						left: 1rem;
-						padding: 0.5rem;
-						width: calc(100% - 3rem);
-						background: rgba(255, 248, 240, 0.5);
-						backdrop-filter: blur(5);
-						border-radius: 10px;
-						opacity: 0;
-						transition: all 1s;
-					}
-					&:hover {
-						filter: contrast(1);
-						article {
-							opacity: 1;
-						}
-					}
-					h2 {
-						margin: 0;
-						font-weight: normal;
-						color: var(--text-color-heavy);
-					}
-				}
-			}
-		}
-	}
-	main {
-		padding-bottom: 4rem;
-		p {
-			font-size: 2rem;
-			line-height: 140%;
-			font-weight: 300;
-			margin: 0 0 2rem 0;
-			strong {
-				color: var(--highlight-color);
-			}
-			a {
-				text-decoration: none;
-				border-bottom: 0.2rem dotted var(--highlight-color);
-				display: inline-block;
-				@media (max-width: 1000px) {
-					display: inline;
-				}
-			}
-		}
-	}
-	#who {
-		display: flex;
-		justify-content: space-between;
-		div {
-			max-width: 48%;
-		}
-		h2 {
-			font-size: 3rem;
-			font-weight: normal;
-		}
-		.you {
-			a {
-				text-decoration: none;
-				cursor: pointer;
-				color: var(--text-color);
-				display: block;
-				margin: 1rem 0;
-				&:hover {
-					h3 {
-						transition: all 0.5s ease-in-out;
-						transform: scale(1.05);
-						span {
-							opacity: 1;
-						}
-					}
-				}
-			}
-			article {
-				background-size: 100%;
-				background-repeat: no-repeat;
-				background-position: left top;
-				transition: all 0.5s ease-out;
-				h3 {
-					color: var(--text-color-heavy);
-					background: var(--bg-color);
-					padding: 1rem;
-					font-size: 2rem;
-					font-weight: normal;
-					margin: 0;
-					border: 1px solid var(--text-color);
-					border-radius: 8px;
-					span {
-						color: var(--highlight-color);
-						opacity: 0;
-						transition: all 0.5s;
-					}
-				}
-				p {
-					padding: 0;
-					display: none;
-					margin: 0;
-					padding: 0.8rem;
-					color: var(--text-color);
-					font-size: 1.5rem;
-					.read {
-						color: var(--highlight-color);
-					}
-				}
-			}
-			.business {
-			}
-		}
-		.me {
-			width: calc(48% - 4rem);
-			padding: 0 2rem;
-			background: var(--text-color);
-			color: var(--bg-color);
-			border-radius: 8px;
-			strong,
-			a {
-				color: inherit;
-				font-weight: bold;
-				border-color: inherit;
-			}
-			a {
-				color: var(--highlight-dark-color);
-			}
-		}
-		@media (max-width: 1000px) {
-			display: block;
-			div {
-				max-width: 100%;
-				padding-bottom: 2rem;
-				article h3 span {
-					opacity: 1 !important;
-				}
-				&.me {
-					width: auto;
-					padding: 1rem;
-					h2 {
-						margin: 1rem 0;
-					}
-				}
-			}
-		}
-	}
-</style>
