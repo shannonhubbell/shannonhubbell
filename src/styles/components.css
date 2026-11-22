@@ -155,8 +155,16 @@
         color: var(--text-color-heavy);
     }
 
+    p {
+        font-size: 2rem;
+        margin: 1rem 0;
+        text-wrap: pretty;
+    }
+
     a {
         color: var(--link-on-tint);
+        border-bottom: 0.2rem dotted var(--highlight-color);
+        text-decoration: none;
     }
 
     .features {
