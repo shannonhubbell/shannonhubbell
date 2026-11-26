@@ -8,6 +8,8 @@ import "../styles/subpages.css";
 import Headshot from "../assets/headshot.webp";
 import LinkedIn from "../assets/linkedin.svg";
 
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+
 const title = "Shannon Hubbell - Contact Me";
 const description =
 	"Web design, development, hosting & consulting. Modern websites, remarkably human.";
@@ -19,38 +21,45 @@ const description =
 		<div class="layout">
 			<div id="contact-form" class="panel panel--form">
 				<h2>Let's work together. Drop me a line!</h2>
-				<form name="contact" method="POST" action="https://formspree.io/f/xyewneog">
+				<form name="contact" id="contact" method="POST">
 					<input type="hidden" name="form-name" value="contact" />
 					<p>
-						<label
-							>Name <input
+						<label>
+							Name{" "}
+							<input
 								type="text"
 								name="name"
 								placeholder="Your Name"
 								required
-							/></label
-						>
+							/>
+						</label>
 					</p>
 					<p>
-						<label
-							>Email <input
+						<label>
+							Email{" "}
+							<input
 								type="email"
 								name="email"
 								placeholder="Your Email"
 								required
-							/></label
-						>
-					</p>
-					<p>
-						<label for="message"
-							>Message
-							<textarea name="message" rows="5" required
-							></textarea>
+							/>
 						</label>
 					</p>
 					<p>
+						<label for="message">
+							Message
+							<textarea
+								name="message"
+								rows="5"
+								required
+							></textarea>
+						</label>
+					</p>
+					<div class="cf-turnstile" data-sitekey={siteKey}></div>
+					<p>
 						<button type="submit">Send</button>
 					</p>
+					<p class="status" role="status"></p>
 				</form>
 			</div>
 			<div id="contact-extra" class="contact-extra">
@@ -62,15 +71,21 @@ const description =
 
 				<ul class="links">
 					<li>
-						<a href="/portfolio" class="cta"> Portfolio </a>
+						<a href="/portfolio" class="cta">
+							{" "}
+							Portfolio{" "}
+						</a>
 					</li>
 					<li>
-						<a href="/resume" class="cta"> Resumé </a>
+						<a href="/resume" class="cta">
+							{" "}
+							Resumé{" "}
+						</a>
 					</li>
 					<li>
-						<a href="mailto:shannon.hubbell@gmail.com"
-							>shannon.hubbell@gmail.com</a
-						>
+						<a href="mailto:shannon.hubbell@gmail.com">
+							shannon.hubbell@gmail.com
+						</a>
 					</li>
 					<li>
 						<a href="tel:+14158582683">+1 (415) 858-2683</a>
@@ -92,4 +107,47 @@ const description =
 		</div>
 	</main>
 	<Footer />
+	<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" />
+	<script>
+		import { actions, isInputError } from "astro:actions";
+
+		const forms: Record<
+			string,
+			(data: FormData) => Promise<{ data?: { ok: boolean }; error?: any }>
+		> = {
+			contact: actions.contact,
+			waitlist: actions.joinWaitlist,
+			upload: actions.upload,
+		};
+
+		for (const [id, action] of Object.entries(forms)) {
+			const form = document.getElementById(id) as HTMLFormElement | null;
+			if (!form) continue;
+			const status = form.querySelector(
+				".status",
+			) as HTMLParagraphElement;
+
+			form.addEventListener("submit", async (event) => {
+				event.preventDefault();
+				status.textContent = "Submitting…";
+
+				const { data, error } = await action(new FormData(form));
+
+				if (error) {
+					// Field-level validation errors come back typed from the Zod schema.
+					const message = isInputError(error)
+						? (Object.values(error.fields).flat()[0] ??
+							"Please check the form and try again.")
+						: error.message;
+					status.textContent = message;
+					return;
+				}
+
+				status.textContent = data?.ok ? "Message sent! ✅ I'll be in touch." : "Submitted.";
+				form.reset();
+				// @ts-expect-error global injected by the Turnstile script
+				window.turnstile?.reset?.();
+			});
+		}
+	</script>
 </Layout>

@@ -1,7 +1,9 @@
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
 	"compatibility_date": "2026-10-23",
-	"compatibility_flags": ["global_fetch_strictly_public"],
+	"compatibility_flags": [
+		"global_fetch_strictly_public"
+	],
 	"name": "shannonhubbell",
 	"main": "@astrojs/cloudflare/entrypoints/server",
 	"assets": {
@@ -10,5 +12,19 @@
 	},
 	"observability": {
 		"enabled": true
-	}
+	},
+	"d1_databases": [
+		{
+			"binding": "forms",
+			"database_name": "forms",
+			"database_id": "2f5e16bc-aece-416a-99c7-3a5462157a09",
+			"remote": true
+		}
+	],
+	"r2_buckets": [
+		{
+			"bucket_name": "forms-uploads",
+			"binding": "forms_uploads"
+		}
+	]
 }

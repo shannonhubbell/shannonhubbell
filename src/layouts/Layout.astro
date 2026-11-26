@@ -23,8 +23,8 @@ const tabTitle = title ? title : "Shannon Hubbell";
 		></script>
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
-			function gtag(...args: unknown[]) {
-				window.dataLayer.push(args);
+			function gtag() {
+				window.dataLayer.push(arguments);
 			}
 			gtag("js", new Date());
 
@@ -52,7 +52,7 @@ const tabTitle = title ? title : "Shannon Hubbell";
 		<CtaWidget />
 		<slot />
 		<BackToTop />
-		<script is:inline>
+		<script>
 			import AOS from "aos";
 			AOS.init();
 		</script>
